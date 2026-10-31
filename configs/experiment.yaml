@@ -1,0 +1,42 @@
+# Experiment configuration for BeamPass
+
+beam_search:
+  beam_width: 2               # B = 2 default from paper
+  max_depth: 5                # Maximum pass sequence length
+  patience: 2                 # Stop early if best latency doesn't improve for N depths
+  max_compiles: 60            # Maximum total compilations budget
+  allow_consecutive_repeats: false
+
+random_search:
+  num_samples: 20             # Default samples for random search comparison baseline
+  seed: 42
+
+benchmark:
+  device: "local-sync"        # Local synchronous execution device
+  pinned_core: 0              # CPU core for taskset pinning on Linux
+  selection_repetitions: 10   # Paper VII-D: 10 repetitions, take median
+  final_invocations: 10       # Paper VII-D: 10 independent invocations
+  final_repetitions: 5        # 5 repetitions per invocation (median of each, then mean ± std)
+  compile_timeout_seconds: 300
+  benchmark_timeout_seconds: 120
+
+models:
+  default: "small_cnn"
+  available:
+    - name: "small_cnn"
+      description: "3-layer ConvNet for ultra-fast demo and testing (<5s compiles)"
+      input_shape: [1, 3, 32, 32]
+      has_conv: true
+    - name: "resnet18"
+      description: "Standard ResNet-18 computer vision model"
+      input_shape: [1, 3, 224, 224]
+      has_conv: true
+    - name: "mobilenet_v2"
+      description: "MobileNetV2 lightweight vision architecture"
+      input_shape: [1, 3, 224, 224]
+      has_conv: true
+    - name: "mlp"
+      description: "Dense Multi-Layer Perceptron (no convolutions, tests legality masking)"
+      input_shape: [1, 128]
+      has_conv: false
+

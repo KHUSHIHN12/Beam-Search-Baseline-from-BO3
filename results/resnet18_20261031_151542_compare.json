@@ -1,0 +1,1344 @@
+{
+  "timestamp": "20261031_151542",
+  "beam_search": {
+    "model_name": "resnet18",
+    "mode": "SIMULATED",
+    "beam_width": 2,
+    "max_depth": 4,
+    "baseline_latency": 68.2,
+    "best_sequence": [
+      "canon",
+      "CC",
+      "I",
+      "CC"
+    ],
+    "best_latency": 41.609,
+    "speedup": 1.639,
+    "final_latency": 41.609,
+    "final_std": 0.624,
+    "total_compiles": 58,
+    "nodes": [
+      {
+        "depth": 0,
+        "sequence": [],
+        "latency": 68.2,
+        "kept_in_beam": true,
+        "parent_sequence": [],
+        "compile_idx": 1,
+        "speedup_vs_baseline": 1.0
+      },
+      {
+        "depth": 1,
+        "sequence": [
+          "canon"
+        ],
+        "latency": 61.879,
+        "kept_in_beam": true,
+        "parent_sequence": [],
+        "compile_idx": 2,
+        "speedup_vs_baseline": 1.102
+      },
+      {
+        "depth": 1,
+        "sequence": [
+          "CC"
+        ],
+        "latency": 60.966,
+        "kept_in_beam": true,
+        "parent_sequence": [],
+        "compile_idx": 3,
+        "speedup_vs_baseline": 1.119
+      },
+      {
+        "depth": 1,
+        "sequence": [
+          "I"
+        ],
+        "latency": 65.312,
+        "kept_in_beam": false,
+        "parent_sequence": [],
+        "compile_idx": 4,
+        "speedup_vs_baseline": 1.044
+      },
+      {
+        "depth": 1,
+        "sequence": [
+          "T"
+        ],
+        "latency": 65.634,
+        "kept_in_beam": false,
+        "parent_sequence": [],
+        "compile_idx": 5,
+        "speedup_vs_baseline": 1.039
+      },
+      {
+        "depth": 1,
+        "sequence": [
+          "gen"
+        ],
+        "latency": 66.71,
+        "kept_in_beam": false,
+        "parent_sequence": [],
+        "compile_idx": 6,
+        "speedup_vs_baseline": 1.022
+      },
+      {
+        "depth": 1,
+        "sequence": [
+          "1x1"
+        ],
+        "latency": 65.729,
+        "kept_in_beam": false,
+        "parent_sequence": [],
+        "compile_idx": 7,
+        "speedup_vs_baseline": 1.038
+      },
+      {
+        "depth": 1,
+        "sequence": [
+          "pad"
+        ],
+        "latency": 66.893,
+        "kept_in_beam": false,
+        "parent_sequence": [],
+        "compile_idx": 8,
+        "speedup_vs_baseline": 1.02
+      },
+      {
+        "depth": 1,
+        "sequence": [
+          "intrinsics"
+        ],
+        "latency": 65.901,
+        "kept_in_beam": false,
+        "parent_sequence": [],
+        "compile_idx": 9,
+        "speedup_vs_baseline": 1.035
+      },
+      {
+        "depth": 1,
+        "sequence": [
+          "trans-mm"
+        ],
+        "latency": 67.486,
+        "kept_in_beam": false,
+        "parent_sequence": [],
+        "compile_idx": 10,
+        "speedup_vs_baseline": 1.011
+      },
+      {
+        "depth": 2,
+        "sequence": [
+          "CC",
+          "canon"
+        ],
+        "latency": 58.269,
+        "kept_in_beam": false,
+        "parent_sequence": [
+          "CC"
+        ],
+        "compile_idx": 11,
+        "speedup_vs_baseline": 1.17
+      },
+      {
+        "depth": 2,
+        "sequence": [
+          "CC",
+          "I"
+        ],
+        "latency": 47.631,
+        "kept_in_beam": true,
+        "parent_sequence": [
+          "CC"
+        ],
+        "compile_idx": 12,
+        "speedup_vs_baseline": 1.432
+      },
+      {
+        "depth": 2,
+        "sequence": [
+          "CC",
+          "T"
+        ],
+        "latency": 58.407,
+        "kept_in_beam": false,
+        "parent_sequence": [
+          "CC"
+        ],
+        "compile_idx": 13,
+        "speedup_vs_baseline": 1.168
+      },
+      {
+        "depth": 2,
+        "sequence": [
+          "CC",
+          "gen"
+        ],
+        "latency": 59.765,
+        "kept_in_beam": false,
+        "parent_sequence": [
+          "CC"
+        ],
+        "compile_idx": 14,
+        "speedup_vs_baseline": 1.141
+      },
+      {
+        "depth": 2,
+        "sequence": [
+          "CC",
+          "1x1"
+        ],
+        "latency": 57.968,
+        "kept_in_beam": false,
+        "parent_sequence": [
+          "CC"
+        ],
+        "compile_idx": 15,
+        "speedup_vs_baseline": 1.177
+      },
+      {
+        "depth": 2,
+        "sequence": [
+          "CC",
+          "pad"
+        ],
+        "latency": 60.103,
+        "kept_in_beam": false,
+        "parent_sequence": [
+          "CC"
+        ],
+        "compile_idx": 16,
+        "speedup_vs_baseline": 1.135
+      },
+      {
+        "depth": 2,
+        "sequence": [
+          "CC",
+          "intrinsics"
+        ],
+        "latency": 58.301,
+        "kept_in_beam": false,
+        "parent_sequence": [
+          "CC"
+        ],
+        "compile_idx": 17,
+        "speedup_vs_baseline": 1.17
+      },
+      {
+        "depth": 2,
+        "sequence": [
+          "CC",
+          "trans-mm"
+        ],
+        "latency": 59.561,
+        "kept_in_beam": false,
+        "parent_sequence": [
+          "CC"
+        ],
+        "compile_idx": 18,
+        "speedup_vs_baseline": 1.145
+      },
+      {
+        "depth": 2,
+        "sequence": [
+          "canon",
+          "CC"
+        ],
+        "latency": 54.991,
+        "kept_in_beam": true,
+        "parent_sequence": [
+          "canon"
+        ],
+        "compile_idx": 19,
+        "speedup_vs_baseline": 1.24
+      },
+      {
+        "depth": 2,
+        "sequence": [
+          "canon",
+          "I"
+        ],
+        "latency": 58.595,
+        "kept_in_beam": false,
+        "parent_sequence": [
+          "canon"
+        ],
+        "compile_idx": 20,
+        "speedup_vs_baseline": 1.164
+      },
+      {
+        "depth": 2,
+        "sequence": [
+          "canon",
+          "T"
+        ],
+        "latency": 59.929,
+        "kept_in_beam": false,
+        "parent_sequence": [
+          "canon"
+        ],
+        "compile_idx": 21,
+        "speedup_vs_baseline": 1.138
+      },
+      {
+        "depth": 2,
+        "sequence": [
+          "canon",
+          "gen"
+        ],
+        "latency": 61.276,
+        "kept_in_beam": false,
+        "parent_sequence": [
+          "canon"
+        ],
+        "compile_idx": 22,
+        "speedup_vs_baseline": 1.113
+      },
+      {
+        "depth": 2,
+        "sequence": [
+          "canon",
+          "1x1"
+        ],
+        "latency": 59.451,
+        "kept_in_beam": false,
+        "parent_sequence": [
+          "canon"
+        ],
+        "compile_idx": 23,
+        "speedup_vs_baseline": 1.147
+      },
+      {
+        "depth": 2,
+        "sequence": [
+          "canon",
+          "pad"
+        ],
+        "latency": 62.1,
+        "kept_in_beam": false,
+        "parent_sequence": [
+          "canon"
+        ],
+        "compile_idx": 24,
+        "speedup_vs_baseline": 1.098
+      },
+      {
+        "depth": 2,
+        "sequence": [
+          "canon",
+          "intrinsics"
+        ],
+        "latency": 60.755,
+        "kept_in_beam": false,
+        "parent_sequence": [
+          "canon"
+        ],
+        "compile_idx": 25,
+        "speedup_vs_baseline": 1.123
+      },
+      {
+        "depth": 2,
+        "sequence": [
+          "canon",
+          "trans-mm"
+        ],
+        "latency": 60.547,
+        "kept_in_beam": false,
+        "parent_sequence": [
+          "canon"
+        ],
+        "compile_idx": 26,
+        "speedup_vs_baseline": 1.126
+      },
+      {
+        "depth": 3,
+        "sequence": [
+          "CC",
+          "I",
+          "canon"
+        ],
+        "latency": 45.954,
+        "kept_in_beam": false,
+        "parent_sequence": [
+          "CC",
+          "I"
+        ],
+        "compile_idx": 27,
+        "speedup_vs_baseline": 1.484
+      },
+      {
+        "depth": 3,
+        "sequence": [
+          "CC",
+          "I",
+          "CC"
+        ],
+        "latency": 45.728,
+        "kept_in_beam": false,
+        "parent_sequence": [
+          "CC",
+          "I"
+        ],
+        "compile_idx": 28,
+        "speedup_vs_baseline": 1.491
+      },
+      {
+        "depth": 3,
+        "sequence": [
+          "CC",
+          "I",
+          "T"
+        ],
+        "latency": 46.139,
+        "kept_in_beam": false,
+        "parent_sequence": [
+          "CC",
+          "I"
+        ],
+        "compile_idx": 29,
+        "speedup_vs_baseline": 1.478
+      },
+      {
+        "depth": 3,
+        "sequence": [
+          "CC",
+          "I",
+          "gen"
+        ],
+        "latency": 46.736,
+        "kept_in_beam": false,
+        "parent_sequence": [
+          "CC",
+          "I"
+        ],
+        "compile_idx": 30,
+        "speedup_vs_baseline": 1.459
+      },
+      {
+        "depth": 3,
+        "sequence": [
+          "CC",
+          "I",
+          "1x1"
+        ],
+        "latency": 45.533,
+        "kept_in_beam": true,
+        "parent_sequence": [
+          "CC",
+          "I"
+        ],
+        "compile_idx": 31,
+        "speedup_vs_baseline": 1.498
+      },
+      {
+        "depth": 3,
+        "sequence": [
+          "CC",
+          "I",
+          "pad"
+        ],
+        "latency": 46.968,
+        "kept_in_beam": false,
+        "parent_sequence": [
+          "CC",
+          "I"
+        ],
+        "compile_idx": 32,
+        "speedup_vs_baseline": 1.452
+      },
+      {
+        "depth": 3,
+        "sequence": [
+          "CC",
+          "I",
+          "intrinsics"
+        ],
+        "latency": 46.635,
+        "kept_in_beam": false,
+        "parent_sequence": [
+          "CC",
+          "I"
+        ],
+        "compile_idx": 33,
+        "speedup_vs_baseline": 1.462
+      },
+      {
+        "depth": 3,
+        "sequence": [
+          "CC",
+          "I",
+          "trans-mm"
+        ],
+        "latency": 46.898,
+        "kept_in_beam": false,
+        "parent_sequence": [
+          "CC",
+          "I"
+        ],
+        "compile_idx": 34,
+        "speedup_vs_baseline": 1.454
+      },
+      {
+        "depth": 3,
+        "sequence": [
+          "canon",
+          "CC",
+          "canon"
+        ],
+        "latency": 54.587,
+        "kept_in_beam": false,
+        "parent_sequence": [
+          "canon",
+          "CC"
+        ],
+        "compile_idx": 35,
+        "speedup_vs_baseline": 1.249
+      },
+      {
+        "depth": 3,
+        "sequence": [
+          "canon",
+          "CC",
+          "I"
+        ],
+        "latency": 43.745,
+        "kept_in_beam": true,
+        "parent_sequence": [
+          "canon",
+          "CC"
+        ],
+        "compile_idx": 36,
+        "speedup_vs_baseline": 1.559
+      },
+      {
+        "depth": 3,
+        "sequence": [
+          "canon",
+          "CC",
+          "T"
+        ],
+        "latency": 54.186,
+        "kept_in_beam": false,
+        "parent_sequence": [
+          "canon",
+          "CC"
+        ],
+        "compile_idx": 37,
+        "speedup_vs_baseline": 1.259
+      },
+      {
+        "depth": 3,
+        "sequence": [
+          "canon",
+          "CC",
+          "gen"
+        ],
+        "latency": 54.335,
+        "kept_in_beam": false,
+        "parent_sequence": [
+          "canon",
+          "CC"
+        ],
+        "compile_idx": 38,
+        "speedup_vs_baseline": 1.255
+      },
+      {
+        "depth": 3,
+        "sequence": [
+          "canon",
+          "CC",
+          "1x1"
+        ],
+        "latency": 52.614,
+        "kept_in_beam": false,
+        "parent_sequence": [
+          "canon",
+          "CC"
+        ],
+        "compile_idx": 39,
+        "speedup_vs_baseline": 1.296
+      },
+      {
+        "depth": 3,
+        "sequence": [
+          "canon",
+          "CC",
+          "pad"
+        ],
+        "latency": 54.75,
+        "kept_in_beam": false,
+        "parent_sequence": [
+          "canon",
+          "CC"
+        ],
+        "compile_idx": 40,
+        "speedup_vs_baseline": 1.246
+      },
+      {
+        "depth": 3,
+        "sequence": [
+          "canon",
+          "CC",
+          "intrinsics"
+        ],
+        "latency": 53.699,
+        "kept_in_beam": false,
+        "parent_sequence": [
+          "canon",
+          "CC"
+        ],
+        "compile_idx": 41,
+        "speedup_vs_baseline": 1.27
+      },
+      {
+        "depth": 3,
+        "sequence": [
+          "canon",
+          "CC",
+          "trans-mm"
+        ],
+        "latency": 54.216,
+        "kept_in_beam": false,
+        "parent_sequence": [
+          "canon",
+          "CC"
+        ],
+        "compile_idx": 42,
+        "speedup_vs_baseline": 1.258
+      },
+      {
+        "depth": 4,
+        "sequence": [
+          "canon",
+          "CC",
+          "I",
+          "canon"
+        ],
+        "latency": 42.559,
+        "kept_in_beam": false,
+        "parent_sequence": [
+          "canon",
+          "CC",
+          "I"
+        ],
+        "compile_idx": 43,
+        "speedup_vs_baseline": 1.602
+      },
+      {
+        "depth": 4,
+        "sequence": [
+          "canon",
+          "CC",
+          "I",
+          "CC"
+        ],
+        "latency": 41.609,
+        "kept_in_beam": true,
+        "parent_sequence": [
+          "canon",
+          "CC",
+          "I"
+        ],
+        "compile_idx": 44,
+        "speedup_vs_baseline": 1.639
+      },
+      {
+        "depth": 4,
+        "sequence": [
+          "canon",
+          "CC",
+          "I",
+          "T"
+        ],
+        "latency": 42.674,
+        "kept_in_beam": false,
+        "parent_sequence": [
+          "canon",
+          "CC",
+          "I"
+        ],
+        "compile_idx": 45,
+        "speedup_vs_baseline": 1.598
+      },
+      {
+        "depth": 4,
+        "sequence": [
+          "canon",
+          "CC",
+          "I",
+          "gen"
+        ],
+        "latency": 43.067,
+        "kept_in_beam": false,
+        "parent_sequence": [
+          "canon",
+          "CC",
+          "I"
+        ],
+        "compile_idx": 46,
+        "speedup_vs_baseline": 1.584
+      },
+      {
+        "depth": 4,
+        "sequence": [
+          "canon",
+          "CC",
+          "I",
+          "1x1"
+        ],
+        "latency": 41.635,
+        "kept_in_beam": true,
+        "parent_sequence": [
+          "canon",
+          "CC",
+          "I"
+        ],
+        "compile_idx": 47,
+        "speedup_vs_baseline": 1.638
+      },
+      {
+        "depth": 4,
+        "sequence": [
+          "canon",
+          "CC",
+          "I",
+          "pad"
+        ],
+        "latency": 42.835,
+        "kept_in_beam": false,
+        "parent_sequence": [
+          "canon",
+          "CC",
+          "I"
+        ],
+        "compile_idx": 48,
+        "speedup_vs_baseline": 1.592
+      },
+      {
+        "depth": 4,
+        "sequence": [
+          "canon",
+          "CC",
+          "I",
+          "intrinsics"
+        ],
+        "latency": 42.385,
+        "kept_in_beam": false,
+        "parent_sequence": [
+          "canon",
+          "CC",
+          "I"
+        ],
+        "compile_idx": 49,
+        "speedup_vs_baseline": 1.609
+      },
+      {
+        "depth": 4,
+        "sequence": [
+          "canon",
+          "CC",
+          "I",
+          "trans-mm"
+        ],
+        "latency": 42.787,
+        "kept_in_beam": false,
+        "parent_sequence": [
+          "canon",
+          "CC",
+          "I"
+        ],
+        "compile_idx": 50,
+        "speedup_vs_baseline": 1.594
+      },
+      {
+        "depth": 4,
+        "sequence": [
+          "CC",
+          "I",
+          "1x1",
+          "canon"
+        ],
+        "latency": 44.33,
+        "kept_in_beam": false,
+        "parent_sequence": [
+          "CC",
+          "I",
+          "1x1"
+        ],
+        "compile_idx": 51,
+        "speedup_vs_baseline": 1.538
+      },
+      {
+        "depth": 4,
+        "sequence": [
+          "CC",
+          "I",
+          "1x1",
+          "CC"
+        ],
+        "latency": 43.814,
+        "kept_in_beam": false,
+        "parent_sequence": [
+          "CC",
+          "I",
+          "1x1"
+        ],
+        "compile_idx": 52,
+        "speedup_vs_baseline": 1.557
+      },
+      {
+        "depth": 4,
+        "sequence": [
+          "CC",
+          "I",
+          "1x1",
+          "I"
+        ],
+        "latency": 45.061,
+        "kept_in_beam": false,
+        "parent_sequence": [
+          "CC",
+          "I",
+          "1x1"
+        ],
+        "compile_idx": 53,
+        "speedup_vs_baseline": 1.514
+      },
+      {
+        "depth": 4,
+        "sequence": [
+          "CC",
+          "I",
+          "1x1",
+          "T"
+        ],
+        "latency": 44.256,
+        "kept_in_beam": false,
+        "parent_sequence": [
+          "CC",
+          "I",
+          "1x1"
+        ],
+        "compile_idx": 54,
+        "speedup_vs_baseline": 1.541
+      },
+      {
+        "depth": 4,
+        "sequence": [
+          "CC",
+          "I",
+          "1x1",
+          "gen"
+        ],
+        "latency": 44.732,
+        "kept_in_beam": false,
+        "parent_sequence": [
+          "CC",
+          "I",
+          "1x1"
+        ],
+        "compile_idx": 55,
+        "speedup_vs_baseline": 1.525
+      },
+      {
+        "depth": 4,
+        "sequence": [
+          "CC",
+          "I",
+          "1x1",
+          "pad"
+        ],
+        "latency": 45.485,
+        "kept_in_beam": false,
+        "parent_sequence": [
+          "CC",
+          "I",
+          "1x1"
+        ],
+        "compile_idx": 56,
+        "speedup_vs_baseline": 1.499
+      },
+      {
+        "depth": 4,
+        "sequence": [
+          "CC",
+          "I",
+          "1x1",
+          "intrinsics"
+        ],
+        "latency": 44.224,
+        "kept_in_beam": false,
+        "parent_sequence": [
+          "CC",
+          "I",
+          "1x1"
+        ],
+        "compile_idx": 57,
+        "speedup_vs_baseline": 1.542
+      },
+      {
+        "depth": 4,
+        "sequence": [
+          "CC",
+          "I",
+          "1x1",
+          "trans-mm"
+        ],
+        "latency": 45.283,
+        "kept_in_beam": false,
+        "parent_sequence": [
+          "CC",
+          "I",
+          "1x1"
+        ],
+        "compile_idx": 58,
+        "speedup_vs_baseline": 1.506
+      }
+    ],
+    "depth_best": {
+      "0": 68.2,
+      "1": 60.966,
+      "2": 47.631,
+      "3": 43.745,
+      "4": 41.609
+    }
+  },
+  "random_search": {
+    "model_name": "resnet18",
+    "mode": "SIMULATED",
+    "num_samples": 57,
+    "baseline_latency": 68.2,
+    "best_sequence": [
+      "CC",
+      "T",
+      "I",
+      "trans-mm"
+    ],
+    "best_latency": 45.426,
+    "speedup": 1.501,
+    "final_latency": 45.426,
+    "final_std": 0.681,
+    "total_compiles": 58,
+    "history": [
+      [
+        [
+          "canon"
+        ],
+        61.879
+      ],
+      [
+        [
+          "T",
+          "gen",
+          "I"
+        ],
+        61.512
+      ],
+      [
+        [
+          "trans-mm"
+        ],
+        67.486
+      ],
+      [
+        [
+          "pad"
+        ],
+        66.893
+      ],
+      [
+        [
+          "canon"
+        ],
+        61.879
+      ],
+      [
+        [
+          "T"
+        ],
+        65.634
+      ],
+      [
+        [
+          "trans-mm",
+          "canon"
+        ],
+        64.527
+      ],
+      [
+        [
+          "trans-mm",
+          "pad"
+        ],
+        65.873
+      ],
+      [
+        [
+          "intrinsics",
+          "gen"
+        ],
+        64.881
+      ],
+      [
+        [
+          "I"
+        ],
+        65.312
+      ],
+      [
+        [
+          "1x1",
+          "gen",
+          "I",
+          "gen"
+        ],
+        60.646
+      ],
+      [
+        [
+          "CC",
+          "I",
+          "intrinsics"
+        ],
+        46.635
+      ],
+      [
+        [
+          "1x1"
+        ],
+        65.729
+      ],
+      [
+        [
+          "gen",
+          "canon",
+          "trans-mm"
+        ],
+        62.585
+      ],
+      [
+        [
+          "pad"
+        ],
+        66.893
+      ],
+      [
+        [
+          "trans-mm"
+        ],
+        67.486
+      ],
+      [
+        [
+          "1x1",
+          "T",
+          "CC"
+        ],
+        56.055
+      ],
+      [
+        [
+          "T"
+        ],
+        65.634
+      ],
+      [
+        [
+          "CC",
+          "gen",
+          "CC"
+        ],
+        57.128
+      ],
+      [
+        [
+          "gen",
+          "trans-mm",
+          "1x1",
+          "I"
+        ],
+        59.789
+      ],
+      [
+        [
+          "1x1",
+          "T",
+          "1x1"
+        ],
+        61.883
+      ],
+      [
+        [
+          "I"
+        ],
+        65.312
+      ],
+      [
+        [
+          "I",
+          "trans-mm"
+        ],
+        63.459
+      ],
+      [
+        [
+          "gen",
+          "T",
+          "pad",
+          "canon"
+        ],
+        61.748
+      ],
+      [
+        [
+          "canon",
+          "pad"
+        ],
+        62.1
+      ],
+      [
+        [
+          "gen",
+          "CC",
+          "gen",
+          "pad"
+        ],
+        58.516
+      ],
+      [
+        [
+          "intrinsics",
+          "pad"
+        ],
+        65.592
+      ],
+      [
+        [
+          "I",
+          "1x1",
+          "I",
+          "gen"
+        ],
+        59.484
+      ],
+      [
+        [
+          "pad",
+          "intrinsics",
+          "1x1"
+        ],
+        62.741
+      ],
+      [
+        [
+          "I",
+          "trans-mm"
+        ],
+        63.459
+      ],
+      [
+        [
+          "canon"
+        ],
+        61.879
+      ],
+      [
+        [
+          "I"
+        ],
+        65.312
+      ],
+      [
+        [
+          "pad",
+          "CC"
+        ],
+        60.014
+      ],
+      [
+        [
+          "pad",
+          "trans-mm",
+          "gen",
+          "canon"
+        ],
+        61.724
+      ],
+      [
+        [
+          "trans-mm"
+        ],
+        67.486
+      ],
+      [
+        [
+          "1x1",
+          "CC",
+          "1x1"
+        ],
+        57.579
+      ],
+      [
+        [
+          "I",
+          "trans-mm",
+          "canon",
+          "1x1"
+        ],
+        58.815
+      ],
+      [
+        [
+          "trans-mm",
+          "CC"
+        ],
+        59.151
+      ],
+      [
+        [
+          "trans-mm",
+          "T",
+          "I"
+        ],
+        61.631
+      ],
+      [
+        [
+          "I",
+          "canon",
+          "pad"
+        ],
+        61.854
+      ],
+      [
+        [
+          "canon",
+          "I",
+          "pad",
+          "gen"
+        ],
+        57.676
+      ],
+      [
+        [
+          "canon",
+          "gen"
+        ],
+        61.276
+      ],
+      [
+        [
+          "CC"
+        ],
+        60.966
+      ],
+      [
+        [
+          "CC",
+          "T",
+          "I",
+          "trans-mm"
+        ],
+        45.426
+      ],
+      [
+        [
+          "gen",
+          "intrinsics"
+        ],
+        64.789
+      ],
+      [
+        [
+          "trans-mm",
+          "T"
+        ],
+        65.195
+      ],
+      [
+        [
+          "pad",
+          "1x1",
+          "trans-mm"
+        ],
+        63.24
+      ],
+      [
+        [
+          "CC",
+          "gen",
+          "T",
+          "CC"
+        ],
+        55.189
+      ],
+      [
+        [
+          "canon",
+          "gen",
+          "T"
+        ],
+        59.372
+      ],
+      [
+        [
+          "CC"
+        ],
+        60.966
+      ],
+      [
+        [
+          "T"
+        ],
+        65.634
+      ],
+      [
+        [
+          "canon"
+        ],
+        61.879
+      ],
+      [
+        [
+          "CC",
+          "gen",
+          "1x1"
+        ],
+        56.988
+      ],
+      [
+        [
+          "T",
+          "I",
+          "trans-mm",
+          "T"
+        ],
+        60.667
+      ],
+      [
+        [
+          "pad",
+          "T",
+          "CC",
+          "I"
+        ],
+        45.981
+      ],
+      [
+        [
+          "1x1",
+          "intrinsics",
+          "pad",
+          "trans-mm"
+        ],
+        62.015
+      ],
+      [
+        [
+          "CC"
+        ],
+        60.966
+      ]
+    ]
+  }
+}

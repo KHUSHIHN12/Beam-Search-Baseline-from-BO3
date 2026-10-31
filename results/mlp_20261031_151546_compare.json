@@ -1,0 +1,496 @@
+{
+  "timestamp": "20261031_151546",
+  "beam_search": {
+    "model_name": "mlp",
+    "mode": "SIMULATED",
+    "beam_width": 2,
+    "max_depth": 3,
+    "baseline_latency": 12.3,
+    "best_sequence": [
+      "canon",
+      "intrinsics",
+      "gen"
+    ],
+    "best_latency": 10.584,
+    "speedup": 1.162,
+    "final_latency": 10.584,
+    "final_std": 0.159,
+    "total_compiles": 22,
+    "nodes": [
+      {
+        "depth": 0,
+        "sequence": [],
+        "latency": 12.3,
+        "kept_in_beam": true,
+        "parent_sequence": [],
+        "compile_idx": 1,
+        "speedup_vs_baseline": 1.0
+      },
+      {
+        "depth": 1,
+        "sequence": [
+          "canon"
+        ],
+        "latency": 11.16,
+        "kept_in_beam": true,
+        "parent_sequence": [],
+        "compile_idx": 2,
+        "speedup_vs_baseline": 1.102
+      },
+      {
+        "depth": 1,
+        "sequence": [
+          "gen"
+        ],
+        "latency": 12.031,
+        "kept_in_beam": false,
+        "parent_sequence": [],
+        "compile_idx": 3,
+        "speedup_vs_baseline": 1.022
+      },
+      {
+        "depth": 1,
+        "sequence": [
+          "pad"
+        ],
+        "latency": 12.064,
+        "kept_in_beam": false,
+        "parent_sequence": [],
+        "compile_idx": 4,
+        "speedup_vs_baseline": 1.02
+      },
+      {
+        "depth": 1,
+        "sequence": [
+          "intrinsics"
+        ],
+        "latency": 11.885,
+        "kept_in_beam": true,
+        "parent_sequence": [],
+        "compile_idx": 5,
+        "speedup_vs_baseline": 1.035
+      },
+      {
+        "depth": 1,
+        "sequence": [
+          "trans-mm"
+        ],
+        "latency": 12.171,
+        "kept_in_beam": false,
+        "parent_sequence": [],
+        "compile_idx": 6,
+        "speedup_vs_baseline": 1.011
+      },
+      {
+        "depth": 2,
+        "sequence": [
+          "canon",
+          "gen"
+        ],
+        "latency": 11.051,
+        "kept_in_beam": false,
+        "parent_sequence": [
+          "canon"
+        ],
+        "compile_idx": 7,
+        "speedup_vs_baseline": 1.113
+      },
+      {
+        "depth": 2,
+        "sequence": [
+          "canon",
+          "pad"
+        ],
+        "latency": 11.2,
+        "kept_in_beam": false,
+        "parent_sequence": [
+          "canon"
+        ],
+        "compile_idx": 8,
+        "speedup_vs_baseline": 1.098
+      },
+      {
+        "depth": 2,
+        "sequence": [
+          "canon",
+          "intrinsics"
+        ],
+        "latency": 10.957,
+        "kept_in_beam": true,
+        "parent_sequence": [
+          "canon"
+        ],
+        "compile_idx": 9,
+        "speedup_vs_baseline": 1.123
+      },
+      {
+        "depth": 2,
+        "sequence": [
+          "canon",
+          "trans-mm"
+        ],
+        "latency": 10.92,
+        "kept_in_beam": true,
+        "parent_sequence": [
+          "canon"
+        ],
+        "compile_idx": 10,
+        "speedup_vs_baseline": 1.126
+      },
+      {
+        "depth": 2,
+        "sequence": [
+          "intrinsics",
+          "canon"
+        ],
+        "latency": 11.528,
+        "kept_in_beam": false,
+        "parent_sequence": [
+          "intrinsics"
+        ],
+        "compile_idx": 11,
+        "speedup_vs_baseline": 1.067
+      },
+      {
+        "depth": 2,
+        "sequence": [
+          "intrinsics",
+          "gen"
+        ],
+        "latency": 11.702,
+        "kept_in_beam": false,
+        "parent_sequence": [
+          "intrinsics"
+        ],
+        "compile_idx": 12,
+        "speedup_vs_baseline": 1.051
+      },
+      {
+        "depth": 2,
+        "sequence": [
+          "intrinsics",
+          "pad"
+        ],
+        "latency": 11.83,
+        "kept_in_beam": false,
+        "parent_sequence": [
+          "intrinsics"
+        ],
+        "compile_idx": 13,
+        "speedup_vs_baseline": 1.04
+      },
+      {
+        "depth": 2,
+        "sequence": [
+          "intrinsics",
+          "trans-mm"
+        ],
+        "latency": 11.747,
+        "kept_in_beam": false,
+        "parent_sequence": [
+          "intrinsics"
+        ],
+        "compile_idx": 14,
+        "speedup_vs_baseline": 1.047
+      },
+      {
+        "depth": 3,
+        "sequence": [
+          "canon",
+          "trans-mm",
+          "canon"
+        ],
+        "latency": 10.876,
+        "kept_in_beam": false,
+        "parent_sequence": [
+          "canon",
+          "trans-mm"
+        ],
+        "compile_idx": 15,
+        "speedup_vs_baseline": 1.131
+      },
+      {
+        "depth": 3,
+        "sequence": [
+          "canon",
+          "trans-mm",
+          "gen"
+        ],
+        "latency": 10.687,
+        "kept_in_beam": false,
+        "parent_sequence": [
+          "canon",
+          "trans-mm"
+        ],
+        "compile_idx": 16,
+        "speedup_vs_baseline": 1.151
+      },
+      {
+        "depth": 3,
+        "sequence": [
+          "canon",
+          "trans-mm",
+          "pad"
+        ],
+        "latency": 10.791,
+        "kept_in_beam": false,
+        "parent_sequence": [
+          "canon",
+          "trans-mm"
+        ],
+        "compile_idx": 17,
+        "speedup_vs_baseline": 1.14
+      },
+      {
+        "depth": 3,
+        "sequence": [
+          "canon",
+          "trans-mm",
+          "intrinsics"
+        ],
+        "latency": 10.717,
+        "kept_in_beam": false,
+        "parent_sequence": [
+          "canon",
+          "trans-mm"
+        ],
+        "compile_idx": 18,
+        "speedup_vs_baseline": 1.148
+      },
+      {
+        "depth": 3,
+        "sequence": [
+          "canon",
+          "intrinsics",
+          "canon"
+        ],
+        "latency": 10.763,
+        "kept_in_beam": false,
+        "parent_sequence": [
+          "canon",
+          "intrinsics"
+        ],
+        "compile_idx": 19,
+        "speedup_vs_baseline": 1.143
+      },
+      {
+        "depth": 3,
+        "sequence": [
+          "canon",
+          "intrinsics",
+          "gen"
+        ],
+        "latency": 10.584,
+        "kept_in_beam": true,
+        "parent_sequence": [
+          "canon",
+          "intrinsics"
+        ],
+        "compile_idx": 20,
+        "speedup_vs_baseline": 1.162
+      },
+      {
+        "depth": 3,
+        "sequence": [
+          "canon",
+          "intrinsics",
+          "pad"
+        ],
+        "latency": 10.828,
+        "kept_in_beam": false,
+        "parent_sequence": [
+          "canon",
+          "intrinsics"
+        ],
+        "compile_idx": 21,
+        "speedup_vs_baseline": 1.136
+      },
+      {
+        "depth": 3,
+        "sequence": [
+          "canon",
+          "intrinsics",
+          "trans-mm"
+        ],
+        "latency": 10.589,
+        "kept_in_beam": true,
+        "parent_sequence": [
+          "canon",
+          "intrinsics"
+        ],
+        "compile_idx": 22,
+        "speedup_vs_baseline": 1.162
+      }
+    ],
+    "depth_best": {
+      "0": 12.3,
+      "1": 11.16,
+      "2": 10.92,
+      "3": 10.584
+    }
+  },
+  "random_search": {
+    "model_name": "mlp",
+    "mode": "SIMULATED",
+    "num_samples": 21,
+    "baseline_latency": 12.3,
+    "best_sequence": [
+      "canon",
+      "gen",
+      "intrinsics"
+    ],
+    "best_latency": 10.768,
+    "speedup": 1.142,
+    "final_latency": 10.768,
+    "final_std": 0.162,
+    "total_compiles": 22,
+    "history": [
+      [
+        [
+          "canon",
+          "gen",
+          "intrinsics"
+        ],
+        10.768
+      ],
+      [
+        [
+          "gen"
+        ],
+        12.031
+      ],
+      [
+        [
+          "canon"
+        ],
+        11.16
+      ],
+      [
+        [
+          "trans-mm",
+          "canon",
+          "trans-mm"
+        ],
+        11.432
+      ],
+      [
+        [
+          "canon"
+        ],
+        11.16
+      ],
+      [
+        [
+          "gen"
+        ],
+        12.031
+      ],
+      [
+        [
+          "trans-mm"
+        ],
+        12.171
+      ],
+      [
+        [
+          "canon",
+          "pad",
+          "trans-mm"
+        ],
+        10.855
+      ],
+      [
+        [
+          "intrinsics"
+        ],
+        11.885
+      ],
+      [
+        [
+          "pad",
+          "canon",
+          "pad"
+        ],
+        11.572
+      ],
+      [
+        [
+          "intrinsics",
+          "pad",
+          "intrinsics"
+        ],
+        11.71
+      ],
+      [
+        [
+          "gen"
+        ],
+        12.031
+      ],
+      [
+        [
+          "canon",
+          "gen"
+        ],
+        11.051
+      ],
+      [
+        [
+          "canon",
+          "intrinsics"
+        ],
+        10.957
+      ],
+      [
+        [
+          "trans-mm",
+          "pad"
+        ],
+        11.88
+      ],
+      [
+        [
+          "intrinsics"
+        ],
+        11.885
+      ],
+      [
+        [
+          "canon",
+          "trans-mm",
+          "canon"
+        ],
+        10.876
+      ],
+      [
+        [
+          "pad",
+          "intrinsics",
+          "gen"
+        ],
+        11.5
+      ],
+      [
+        [
+          "canon",
+          "gen",
+          "pad"
+        ],
+        10.841
+      ],
+      [
+        [
+          "canon",
+          "pad"
+        ],
+        11.2
+      ],
+      [
+        [
+          "intrinsics"
+        ],
+        11.885
+      ]
+    ]
+  }
+}

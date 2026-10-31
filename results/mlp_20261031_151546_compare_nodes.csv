@@ -1,0 +1,23 @@
+depth,sequence,latency_ms,kept_in_beam,speedup_vs_baseline,parent_sequence,compile_idx
+0,EMPTY,12.3,True,1.0,ROOT,1
+1,canon,11.16,True,1.102,ROOT,2
+1,gen,12.031,False,1.022,ROOT,3
+1,pad,12.064,False,1.02,ROOT,4
+1,intrinsics,11.885,True,1.035,ROOT,5
+1,trans-mm,12.171,False,1.011,ROOT,6
+2,canon -> gen,11.051,False,1.113,canon,7
+2,canon -> pad,11.2,False,1.098,canon,8
+2,canon -> intrinsics,10.957,True,1.123,canon,9
+2,canon -> trans-mm,10.92,True,1.126,canon,10
+2,intrinsics -> canon,11.528,False,1.067,intrinsics,11
+2,intrinsics -> gen,11.702,False,1.051,intrinsics,12
+2,intrinsics -> pad,11.83,False,1.04,intrinsics,13
+2,intrinsics -> trans-mm,11.747,False,1.047,intrinsics,14
+3,canon -> trans-mm -> canon,10.876,False,1.131,canon -> trans-mm,15
+3,canon -> trans-mm -> gen,10.687,False,1.151,canon -> trans-mm,16
+3,canon -> trans-mm -> pad,10.791,False,1.14,canon -> trans-mm,17
+3,canon -> trans-mm -> intrinsics,10.717,False,1.148,canon -> trans-mm,18
+3,canon -> intrinsics -> canon,10.763,False,1.143,canon -> intrinsics,19
+3,canon -> intrinsics -> gen,10.584,True,1.162,canon -> intrinsics,20
+3,canon -> intrinsics -> pad,10.828,False,1.136,canon -> intrinsics,21
+3,canon -> intrinsics -> trans-mm,10.589,True,1.162,canon -> intrinsics,22

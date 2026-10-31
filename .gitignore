@@ -1,0 +1,24 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Pytest & test caches
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Matplotlib cache
+.beampass_mpl/
+
+# IREE compiled binaries and temporary artifacts
+*.vmfb
+*.tmp
+
+# Large model artifacts (generated on demand via scripts/export_models.py)
+models/resnet18.mlir
+models/resnet18.onnx
+
+# System files
+.DS_Store
+Thumbs.db

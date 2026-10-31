@@ -1,0 +1,4384 @@
+{
+  "small_cnn::default_knobs::": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [],
+    "latency": 24.5,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439808.3550024,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::canon": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon"
+    ],
+    "latency": 22.229,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439808.3590689,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::CC": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC"
+    ],
+    "latency": Infinity,
+    "final_mean": Infinity,
+    "final_std": 0.0,
+    "timestamp": 1793439877.122835,
+    "metadata": {
+      "mode": "REAL",
+      "status": "OK"
+    }
+  },
+  "small_cnn::default_knobs::I": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "I"
+    ],
+    "latency": 23.463,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439808.3622305,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::T": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "T"
+    ],
+    "latency": 23.578,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439808.3636067,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::gen": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "gen"
+    ],
+    "latency": 23.965,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439808.3650382,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::1x1": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "1x1"
+    ],
+    "latency": 23.612,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439808.3665495,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::pad": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "pad"
+    ],
+    "latency": 24.03,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439808.3679998,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::intrinsics": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "intrinsics"
+    ],
+    "latency": 23.674,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439808.3695633,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::trans-mm": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "trans-mm"
+    ],
+    "latency": 24.243,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439808.3710554,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::CC,canon": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC",
+      "canon"
+    ],
+    "latency": 20.932,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439838.1572924,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::CC,I": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC",
+      "I"
+    ],
+    "latency": Infinity,
+    "final_mean": Infinity,
+    "final_std": 0.0,
+    "timestamp": 1793441229.9549866,
+    "metadata": {
+      "mode": "REAL",
+      "status": "OK"
+    }
+  },
+  "small_cnn::default_knobs::CC,T": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC",
+      "T"
+    ],
+    "latency": 20.982,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439838.1610978,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::CC,gen": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC",
+      "gen"
+    ],
+    "latency": 21.47,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439838.1628883,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::CC,1x1": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC",
+      "1x1"
+    ],
+    "latency": 20.824,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439838.1653845,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::CC,pad": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC",
+      "pad"
+    ],
+    "latency": 21.591,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439838.1679225,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::CC,intrinsics": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC",
+      "intrinsics"
+    ],
+    "latency": 20.944,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439838.169551,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::CC,trans-mm": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC",
+      "trans-mm"
+    ],
+    "latency": 21.397,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439838.1711807,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::canon,CC": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "CC"
+    ],
+    "latency": 19.755,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439838.1728237,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::canon,I": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "I"
+    ],
+    "latency": 21.049,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439838.1746244,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::canon,T": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "T"
+    ],
+    "latency": 21.529,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439838.1766012,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::canon,gen": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "gen"
+    ],
+    "latency": 22.013,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439838.1783633,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::canon,1x1": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "1x1"
+    ],
+    "latency": 21.357,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439838.1803575,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::canon,pad": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "pad"
+    ],
+    "latency": 22.309,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439838.1824996,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::canon,intrinsics": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "intrinsics"
+    ],
+    "latency": 21.825,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439838.1845345,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::canon,trans-mm": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "trans-mm"
+    ],
+    "latency": 21.751,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439838.1863587,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::CC,I,canon": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC",
+      "I",
+      "canon"
+    ],
+    "latency": 16.508,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439838.1952157,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::CC,I,CC": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC",
+      "I",
+      "CC"
+    ],
+    "latency": 16.427,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439838.1972022,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::CC,I,T": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC",
+      "I",
+      "T"
+    ],
+    "latency": 16.575,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439838.1991563,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::CC,I,gen": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC",
+      "I",
+      "gen"
+    ],
+    "latency": 16.789,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439838.2011418,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::CC,I,1x1": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC",
+      "I",
+      "1x1"
+    ],
+    "latency": 16.357,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439838.2030106,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::CC,I,pad": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC",
+      "I",
+      "pad"
+    ],
+    "latency": 16.873,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439838.204976,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::CC,I,intrinsics": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC",
+      "I",
+      "intrinsics"
+    ],
+    "latency": Infinity,
+    "final_mean": Infinity,
+    "final_std": 0.0,
+    "timestamp": 1793444272.171306,
+    "metadata": {
+      "mode": "REAL",
+      "status": "OK"
+    }
+  },
+  "small_cnn::default_knobs::CC,I,trans-mm": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC",
+      "I",
+      "trans-mm"
+    ],
+    "latency": 16.847,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439838.210115,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::canon,CC,canon": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "CC",
+      "canon"
+    ],
+    "latency": 19.61,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439838.212176,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::canon,CC,I": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "CC",
+      "I"
+    ],
+    "latency": Infinity,
+    "final_mean": Infinity,
+    "final_std": 0.0,
+    "timestamp": 1793441219.735222,
+    "metadata": {
+      "mode": "REAL",
+      "status": "OK"
+    }
+  },
+  "small_cnn::default_knobs::canon,CC,T": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "CC",
+      "T"
+    ],
+    "latency": 19.465,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439838.2161913,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::canon,CC,gen": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "CC",
+      "gen"
+    ],
+    "latency": 19.519,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439838.218279,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::canon,CC,1x1": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "CC",
+      "1x1"
+    ],
+    "latency": 18.901,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439838.2202137,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::canon,CC,pad": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "CC",
+      "pad"
+    ],
+    "latency": 19.668,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439838.2221844,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::canon,CC,intrinsics": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "CC",
+      "intrinsics"
+    ],
+    "latency": 19.291,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439838.2242377,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::canon,CC,trans-mm": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "CC",
+      "trans-mm"
+    ],
+    "latency": 19.476,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439838.2266374,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::canon,CC,I,canon": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "CC",
+      "I",
+      "canon"
+    ],
+    "latency": 15.289,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439854.0522811,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::canon,CC,I,CC": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "CC",
+      "I",
+      "CC"
+    ],
+    "latency": Infinity,
+    "final_mean": Infinity,
+    "final_std": 0.0,
+    "timestamp": 1793440552.4387953,
+    "metadata": {
+      "mode": "REAL",
+      "status": "OK"
+    }
+  },
+  "small_cnn::default_knobs::canon,CC,I,T": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "CC",
+      "I",
+      "T"
+    ],
+    "latency": 15.33,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439854.0553408,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::canon,CC,I,gen": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "CC",
+      "I",
+      "gen"
+    ],
+    "latency": 15.471,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439854.0570383,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::canon,CC,I,1x1": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "CC",
+      "I",
+      "1x1"
+    ],
+    "latency": 14.957,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439854.0595615,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::canon,CC,I,pad": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "CC",
+      "I",
+      "pad"
+    ],
+    "latency": 15.388,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439854.0611832,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::canon,CC,I,intrinsics": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "CC",
+      "I",
+      "intrinsics"
+    ],
+    "latency": 15.226,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439854.0626957,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::canon,CC,I,trans-mm": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "CC",
+      "I",
+      "trans-mm"
+    ],
+    "latency": 15.371,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439854.0644538,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::CC,I,1x1,canon": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC",
+      "I",
+      "1x1",
+      "canon"
+    ],
+    "latency": 15.925,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439854.0661979,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::CC,I,1x1,CC": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC",
+      "I",
+      "1x1",
+      "CC"
+    ],
+    "latency": 15.74,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439854.067848,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::CC,I,1x1,I": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC",
+      "I",
+      "1x1",
+      "I"
+    ],
+    "latency": 16.188,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439854.069453,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::CC,I,1x1,T": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC",
+      "I",
+      "1x1",
+      "T"
+    ],
+    "latency": 15.899,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439854.0721655,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::CC,I,1x1,gen": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC",
+      "I",
+      "1x1",
+      "gen"
+    ],
+    "latency": 16.069,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439854.0742714,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::CC,I,1x1,pad": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC",
+      "I",
+      "1x1",
+      "pad"
+    ],
+    "latency": 16.34,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439854.076028,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::CC,I,1x1,intrinsics": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC",
+      "I",
+      "1x1",
+      "intrinsics"
+    ],
+    "latency": 15.887,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439854.0776968,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::CC,I,1x1,trans-mm": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC",
+      "I",
+      "1x1",
+      "trans-mm"
+    ],
+    "latency": 16.267,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439854.0794592,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::canon,CC,I,CC,canon": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "CC",
+      "I",
+      "CC",
+      "canon"
+    ],
+    "latency": 14.88,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439854.0812962,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::canon,CC,I,CC,I": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "CC",
+      "I",
+      "CC",
+      "I"
+    ],
+    "latency": 14.672,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439854.0829551,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::T,gen,I": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "T",
+      "gen",
+      "I"
+    ],
+    "latency": 22.097,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439854.088774,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::trans-mm,canon": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "trans-mm",
+      "canon"
+    ],
+    "latency": 23.181,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439854.0907018,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::T,intrinsics,T,trans-mm,1x1": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "T",
+      "intrinsics",
+      "T",
+      "trans-mm",
+      "1x1"
+    ],
+    "latency": 21.505,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439854.092672,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::canon,T,intrinsics": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "T",
+      "intrinsics"
+    ],
+    "latency": 21.146,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439854.0945833,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::gen,I,gen": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "gen",
+      "I",
+      "gen"
+    ],
+    "latency": 22.564,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439854.0964203,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::gen,canon,trans-mm": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "gen",
+      "canon",
+      "trans-mm"
+    ],
+    "latency": 22.483,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439854.0982935,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::CC,intrinsics,CC,1x1,trans-mm": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC",
+      "intrinsics",
+      "CC",
+      "1x1",
+      "trans-mm"
+    ],
+    "latency": 18.972,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439854.100825,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::1x1,T,CC,canon,gen": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "1x1",
+      "T",
+      "CC",
+      "canon",
+      "gen"
+    ],
+    "latency": 19.213,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439854.1028147,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::CC,gen,CC": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC",
+      "gen",
+      "CC"
+    ],
+    "latency": 20.523,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439854.1047,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::gen,trans-mm,1x1,I": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "gen",
+      "trans-mm",
+      "1x1",
+      "I"
+    ],
+    "latency": 21.478,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439854.1067173,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::1x1,T,1x1": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "1x1",
+      "T",
+      "1x1"
+    ],
+    "latency": 22.231,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439854.1086488,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::T,I,trans-mm,pad,gen": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "T",
+      "I",
+      "trans-mm",
+      "pad",
+      "gen"
+    ],
+    "latency": 21.26,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439854.110839,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::T,pad,canon,gen,canon": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "T",
+      "pad",
+      "canon",
+      "gen",
+      "canon"
+    ],
+    "latency": 21.747,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439854.1128933,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::pad,gen,CC": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "pad",
+      "gen",
+      "CC"
+    ],
+    "latency": 20.971,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439854.1148317,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::1x1,T": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "1x1",
+      "T"
+    ],
+    "latency": 22.822,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439854.1169736,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::pad,trans-mm,I,1x1": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "pad",
+      "trans-mm",
+      "I",
+      "1x1"
+    ],
+    "latency": 21.59,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439854.1188455,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::T,1x1": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "T",
+      "1x1"
+    ],
+    "latency": 22.704,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439854.1208463,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::pad,intrinsics,1x1,T,I": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "pad",
+      "intrinsics",
+      "1x1",
+      "T",
+      "I"
+    ],
+    "latency": 20.726,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439854.1227515,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::intrinsics,CC,canon,I,T": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "intrinsics",
+      "CC",
+      "canon",
+      "I",
+      "T"
+    ],
+    "latency": 15.463,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439854.124698,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::pad,CC": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "pad",
+      "CC"
+    ],
+    "latency": 21.559,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439854.1267118,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::pad,trans-mm,gen,canon": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "pad",
+      "trans-mm",
+      "gen",
+      "canon"
+    ],
+    "latency": 22.174,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439854.1286893,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::1x1,CC,1x1": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "1x1",
+      "CC",
+      "1x1"
+    ],
+    "latency": 20.684,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439854.1307514,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::I,trans-mm,canon,1x1": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "I",
+      "trans-mm",
+      "canon",
+      "1x1"
+    ],
+    "latency": 21.128,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439854.133268,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::I,CC,1x1,T,I": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "I",
+      "CC",
+      "1x1",
+      "T",
+      "I"
+    ],
+    "latency": 18.019,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439854.13549,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::I,canon,pad": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "I",
+      "canon",
+      "pad"
+    ],
+    "latency": 22.22,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439854.1375694,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::canon,I,pad,gen": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "I",
+      "pad",
+      "gen"
+    ],
+    "latency": 20.719,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439854.1395957,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::CC,I,trans-mm,CC,T": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC",
+      "I",
+      "trans-mm",
+      "CC",
+      "T"
+    ],
+    "latency": 15.689,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439854.1422586,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::intrinsics,I": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "intrinsics",
+      "I"
+    ],
+    "latency": 22.403,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439854.1444526,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::trans-mm,pad,T": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "trans-mm",
+      "pad",
+      "T"
+    ],
+    "latency": 23.227,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439854.1465826,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::T,1x1,intrinsics,1x1,trans-mm": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "T",
+      "1x1",
+      "intrinsics",
+      "1x1",
+      "trans-mm"
+    ],
+    "latency": 21.292,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439854.1489089,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::intrinsics,CC,gen,T,CC": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "intrinsics",
+      "CC",
+      "gen",
+      "T",
+      "CC"
+    ],
+    "latency": 19.387,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439854.1510553,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::canon,gen,T": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "gen",
+      "T"
+    ],
+    "latency": 21.329,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439854.1532164,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::CC,gen,1x1": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC",
+      "gen",
+      "1x1"
+    ],
+    "latency": 20.472,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439854.1555152,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::T,I,trans-mm,T": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "T",
+      "I",
+      "trans-mm",
+      "T"
+    ],
+    "latency": 21.794,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439854.1578226,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::pad,T,CC,I": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "pad",
+      "T",
+      "CC",
+      "I"
+    ],
+    "latency": 16.518,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439854.1600647,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::1x1,intrinsics,pad,trans-mm": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "1x1",
+      "intrinsics",
+      "pad",
+      "trans-mm"
+    ],
+    "latency": 22.278,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439854.1624658,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::CC,gen,T": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC",
+      "gen",
+      "T"
+    ],
+    "latency": 20.573,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439854.1650414,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::trans-mm,intrinsics": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "trans-mm",
+      "intrinsics"
+    ],
+    "latency": 23.355,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439854.1672268,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::pad,I": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "pad",
+      "I"
+    ],
+    "latency": 23.044,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439854.1697412,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::intrinsics,T,CC": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "intrinsics",
+      "T",
+      "CC"
+    ],
+    "latency": 20.677,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439854.1720579,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::trans-mm,CC,canon,CC": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "trans-mm",
+      "CC",
+      "canon",
+      "CC"
+    ],
+    "latency": 19.526,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439854.1745653,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::pad,trans-mm": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "pad",
+      "trans-mm"
+    ],
+    "latency": 23.77,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439854.1769643,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::T,intrinsics,canon,T": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "T",
+      "intrinsics",
+      "canon",
+      "T"
+    ],
+    "latency": 21.727,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439854.1793234,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::I,canon": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "I",
+      "canon"
+    ],
+    "latency": 22.339,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439938.324885,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::I,CC": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "I",
+      "CC"
+    ],
+    "latency": 19.741,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439938.327687,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::I,T": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "I",
+      "T"
+    ],
+    "latency": 22.679,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439938.330349,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::I,gen": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "I",
+      "gen"
+    ],
+    "latency": 22.719,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439938.333355,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::I,1x1": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "I",
+      "1x1"
+    ],
+    "latency": 22.504,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439938.33584,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::I,pad": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "I",
+      "pad"
+    ],
+    "latency": 23.048,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439938.3381968,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::I,intrinsics": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "I",
+      "intrinsics"
+    ],
+    "latency": 22.723,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439938.3406236,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::I,trans-mm": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "I",
+      "trans-mm"
+    ],
+    "latency": 22.797,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439938.343086,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::I,CC,canon": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "I",
+      "CC",
+      "canon"
+    ],
+    "latency": 19.018,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439938.345487,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::I,CC,I": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "I",
+      "CC",
+      "I"
+    ],
+    "latency": 19.575,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439938.3478963,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::I,CC,T": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "I",
+      "CC",
+      "T"
+    ],
+    "latency": 19.435,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439938.350378,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::I,CC,gen": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "I",
+      "CC",
+      "gen"
+    ],
+    "latency": 19.545,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439938.3535588,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::I,CC,1x1": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "I",
+      "CC",
+      "1x1"
+    ],
+    "latency": 19.224,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439938.3562028,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::I,CC,pad": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "I",
+      "CC",
+      "pad"
+    ],
+    "latency": 19.592,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439938.358759,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::I,CC,intrinsics": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "I",
+      "CC",
+      "intrinsics"
+    ],
+    "latency": 19.123,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439938.3613276,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::I,CC,trans-mm": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "I",
+      "CC",
+      "trans-mm"
+    ],
+    "latency": 19.67,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439938.364001,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::canon,CC,1x1,canon": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "CC",
+      "1x1",
+      "canon"
+    ],
+    "latency": 18.728,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439938.3669825,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::canon,CC,1x1,CC": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "CC",
+      "1x1",
+      "CC"
+    ],
+    "latency": 18.131,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439938.3696375,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::canon,CC,1x1,I": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "CC",
+      "1x1",
+      "I"
+    ],
+    "latency": Infinity,
+    "final_mean": Infinity,
+    "final_std": 0.0,
+    "timestamp": 1793444269.973126,
+    "metadata": {
+      "mode": "REAL",
+      "status": "OK"
+    }
+  },
+  "small_cnn::default_knobs::canon,CC,1x1,T": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "CC",
+      "1x1",
+      "T"
+    ],
+    "latency": 18.587,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439938.3752673,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::canon,CC,1x1,gen": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "CC",
+      "1x1",
+      "gen"
+    ],
+    "latency": 18.822,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439938.378273,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::canon,CC,1x1,pad": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "CC",
+      "1x1",
+      "pad"
+    ],
+    "latency": 18.781,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439938.3811948,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::canon,CC,1x1,intrinsics": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "CC",
+      "1x1",
+      "intrinsics"
+    ],
+    "latency": 18.491,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439938.3840833,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::canon,CC,1x1,trans-mm": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "CC",
+      "1x1",
+      "trans-mm"
+    ],
+    "latency": 18.609,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439938.3871958,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::trans-mm,pad": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "trans-mm",
+      "pad"
+    ],
+    "latency": 23.664,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439938.393569,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::intrinsics,gen": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "intrinsics",
+      "gen"
+    ],
+    "latency": 23.308,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439938.3962252,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::1x1,gen,I,gen": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "1x1",
+      "gen",
+      "I",
+      "gen"
+    ],
+    "latency": 21.786,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439938.399303,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::1x1,T,CC": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "1x1",
+      "T",
+      "CC"
+    ],
+    "latency": 20.137,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439938.402611,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::gen,T,pad,canon": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "gen",
+      "T",
+      "pad",
+      "canon"
+    ],
+    "latency": 22.182,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439938.4054303,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::gen,CC,gen,pad": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "gen",
+      "CC",
+      "gen",
+      "pad"
+    ],
+    "latency": 21.021,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439938.408179,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::intrinsics,pad": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "intrinsics",
+      "pad"
+    ],
+    "latency": 23.563,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439938.4108217,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::I,1x1,I,gen": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "I",
+      "1x1",
+      "I",
+      "gen"
+    ],
+    "latency": 21.369,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439938.413603,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::pad,intrinsics,1x1": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "pad",
+      "intrinsics",
+      "1x1"
+    ],
+    "latency": 22.539,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439938.4164493,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::trans-mm,CC": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "trans-mm",
+      "CC"
+    ],
+    "latency": 21.249,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439938.419427,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::trans-mm,T,I": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "trans-mm",
+      "T",
+      "I"
+    ],
+    "latency": 22.14,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439938.4223197,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::CC,T,I,trans-mm": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC",
+      "T",
+      "I",
+      "trans-mm"
+    ],
+    "latency": 16.319,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439938.4252398,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::gen,intrinsics": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "gen",
+      "intrinsics"
+    ],
+    "latency": 23.275,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439938.4280581,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::trans-mm,T": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "trans-mm",
+      "T"
+    ],
+    "latency": 23.421,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439938.4309735,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::pad,1x1,trans-mm": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "pad",
+      "1x1",
+      "trans-mm"
+    ],
+    "latency": 22.718,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439938.4338956,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::CC,gen,T,CC": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC",
+      "gen",
+      "T",
+      "CC"
+    ],
+    "latency": 19.826,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439938.4367661,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [],
+    "latency": 68.2,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.3718555,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::canon": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon"
+    ],
+    "latency": 61.879,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.3752465,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::CC": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC"
+    ],
+    "latency": 60.966,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.3785129,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::I": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "I"
+    ],
+    "latency": 65.312,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.38155,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::T": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "T"
+    ],
+    "latency": 65.634,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.3847237,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::gen": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "gen"
+    ],
+    "latency": 66.71,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.387997,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::1x1": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "1x1"
+    ],
+    "latency": 65.729,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.391072,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::pad": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "pad"
+    ],
+    "latency": 66.893,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.3944592,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::intrinsics": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "intrinsics"
+    ],
+    "latency": 65.901,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.3999434,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::trans-mm": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "trans-mm"
+    ],
+    "latency": 67.486,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.403332,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::CC,canon": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC",
+      "canon"
+    ],
+    "latency": 58.269,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.4069815,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::CC,I": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC",
+      "I"
+    ],
+    "latency": 47.631,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.4104466,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::CC,T": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC",
+      "T"
+    ],
+    "latency": 58.407,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.4136662,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::CC,gen": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC",
+      "gen"
+    ],
+    "latency": 59.765,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.4171138,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::CC,1x1": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC",
+      "1x1"
+    ],
+    "latency": 57.968,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.4205623,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::CC,pad": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC",
+      "pad"
+    ],
+    "latency": 60.103,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.4241078,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::CC,intrinsics": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC",
+      "intrinsics"
+    ],
+    "latency": 58.301,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.428035,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::CC,trans-mm": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC",
+      "trans-mm"
+    ],
+    "latency": 59.561,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.4313183,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::canon,CC": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "CC"
+    ],
+    "latency": 54.991,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.434888,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::canon,I": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "I"
+    ],
+    "latency": 58.595,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.4382577,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::canon,T": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "T"
+    ],
+    "latency": 59.929,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.4417517,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::canon,gen": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "gen"
+    ],
+    "latency": 61.276,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.4453804,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::canon,1x1": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "1x1"
+    ],
+    "latency": 59.451,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.4490058,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::canon,pad": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "pad"
+    ],
+    "latency": 62.1,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.4525797,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::canon,intrinsics": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "intrinsics"
+    ],
+    "latency": 60.755,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.4560971,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::canon,trans-mm": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "trans-mm"
+    ],
+    "latency": 60.547,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.4599757,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::CC,I,canon": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC",
+      "I",
+      "canon"
+    ],
+    "latency": 45.954,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.463569,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::CC,I,CC": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC",
+      "I",
+      "CC"
+    ],
+    "latency": 45.728,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.4672368,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::CC,I,T": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC",
+      "I",
+      "T"
+    ],
+    "latency": 46.139,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.471968,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::CC,I,gen": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC",
+      "I",
+      "gen"
+    ],
+    "latency": 46.736,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.476426,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::CC,I,1x1": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC",
+      "I",
+      "1x1"
+    ],
+    "latency": 45.533,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.4804015,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::CC,I,pad": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC",
+      "I",
+      "pad"
+    ],
+    "latency": 46.968,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.484167,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::CC,I,intrinsics": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC",
+      "I",
+      "intrinsics"
+    ],
+    "latency": 46.635,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.4878032,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::CC,I,trans-mm": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC",
+      "I",
+      "trans-mm"
+    ],
+    "latency": 46.898,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.491449,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::canon,CC,canon": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "CC",
+      "canon"
+    ],
+    "latency": 54.587,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.495321,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::canon,CC,I": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "CC",
+      "I"
+    ],
+    "latency": 43.745,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.4986327,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::canon,CC,T": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "CC",
+      "T"
+    ],
+    "latency": 54.186,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.5019772,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::canon,CC,gen": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "CC",
+      "gen"
+    ],
+    "latency": 54.335,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.5052996,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::canon,CC,1x1": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "CC",
+      "1x1"
+    ],
+    "latency": 52.614,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.5085623,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::canon,CC,pad": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "CC",
+      "pad"
+    ],
+    "latency": 54.75,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.5127342,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::canon,CC,intrinsics": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "CC",
+      "intrinsics"
+    ],
+    "latency": 53.699,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.5161078,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::canon,CC,trans-mm": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "CC",
+      "trans-mm"
+    ],
+    "latency": 54.216,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.519445,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::canon,CC,I,canon": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "CC",
+      "I",
+      "canon"
+    ],
+    "latency": 42.559,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.5229452,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::canon,CC,I,CC": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "CC",
+      "I",
+      "CC"
+    ],
+    "latency": 41.609,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.526337,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::canon,CC,I,T": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "CC",
+      "I",
+      "T"
+    ],
+    "latency": 42.674,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.530303,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::canon,CC,I,gen": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "CC",
+      "I",
+      "gen"
+    ],
+    "latency": 43.067,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.53368,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::canon,CC,I,1x1": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "CC",
+      "I",
+      "1x1"
+    ],
+    "latency": 41.635,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.5371954,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::canon,CC,I,pad": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "CC",
+      "I",
+      "pad"
+    ],
+    "latency": 42.835,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.5408087,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::canon,CC,I,intrinsics": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "CC",
+      "I",
+      "intrinsics"
+    ],
+    "latency": 42.385,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.5443509,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::canon,CC,I,trans-mm": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "CC",
+      "I",
+      "trans-mm"
+    ],
+    "latency": 42.787,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.54847,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::CC,I,1x1,canon": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC",
+      "I",
+      "1x1",
+      "canon"
+    ],
+    "latency": 44.33,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.5522373,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::CC,I,1x1,CC": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC",
+      "I",
+      "1x1",
+      "CC"
+    ],
+    "latency": 43.814,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.5563123,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::CC,I,1x1,I": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC",
+      "I",
+      "1x1",
+      "I"
+    ],
+    "latency": 45.061,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.560238,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::CC,I,1x1,T": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC",
+      "I",
+      "1x1",
+      "T"
+    ],
+    "latency": 44.256,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.5638354,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::CC,I,1x1,gen": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC",
+      "I",
+      "1x1",
+      "gen"
+    ],
+    "latency": 44.732,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.5675638,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::CC,I,1x1,pad": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC",
+      "I",
+      "1x1",
+      "pad"
+    ],
+    "latency": 45.485,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.5715961,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::CC,I,1x1,intrinsics": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC",
+      "I",
+      "1x1",
+      "intrinsics"
+    ],
+    "latency": 44.224,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.5752769,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::CC,I,1x1,trans-mm": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC",
+      "I",
+      "1x1",
+      "trans-mm"
+    ],
+    "latency": 45.283,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.5787556,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::T,gen,I": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "T",
+      "gen",
+      "I"
+    ],
+    "latency": 61.512,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.5858543,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::trans-mm,canon": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "trans-mm",
+      "canon"
+    ],
+    "latency": 64.527,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.589425,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::trans-mm,pad": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "trans-mm",
+      "pad"
+    ],
+    "latency": 65.873,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.592907,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::intrinsics,gen": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "intrinsics",
+      "gen"
+    ],
+    "latency": 64.881,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.5964503,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::1x1,gen,I,gen": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "1x1",
+      "gen",
+      "I",
+      "gen"
+    ],
+    "latency": 60.646,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.600621,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::gen,canon,trans-mm": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "gen",
+      "canon",
+      "trans-mm"
+    ],
+    "latency": 62.585,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.6047678,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::1x1,T,CC": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "1x1",
+      "T",
+      "CC"
+    ],
+    "latency": 56.055,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.6084669,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::CC,gen,CC": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC",
+      "gen",
+      "CC"
+    ],
+    "latency": 57.128,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.6120715,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::gen,trans-mm,1x1,I": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "gen",
+      "trans-mm",
+      "1x1",
+      "I"
+    ],
+    "latency": 59.789,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.615681,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::1x1,T,1x1": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "1x1",
+      "T",
+      "1x1"
+    ],
+    "latency": 61.883,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.6193748,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::I,trans-mm": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "I",
+      "trans-mm"
+    ],
+    "latency": 63.459,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.6230562,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::gen,T,pad,canon": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "gen",
+      "T",
+      "pad",
+      "canon"
+    ],
+    "latency": 61.748,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.626607,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::gen,CC,gen,pad": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "gen",
+      "CC",
+      "gen",
+      "pad"
+    ],
+    "latency": 58.516,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.6302285,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::intrinsics,pad": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "intrinsics",
+      "pad"
+    ],
+    "latency": 65.592,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.6338928,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::I,1x1,I,gen": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "I",
+      "1x1",
+      "I",
+      "gen"
+    ],
+    "latency": 59.484,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.6375287,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::pad,intrinsics,1x1": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "pad",
+      "intrinsics",
+      "1x1"
+    ],
+    "latency": 62.741,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.641396,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::pad,CC": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "pad",
+      "CC"
+    ],
+    "latency": 60.014,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.6451194,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::pad,trans-mm,gen,canon": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "pad",
+      "trans-mm",
+      "gen",
+      "canon"
+    ],
+    "latency": 61.724,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.6489441,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::1x1,CC,1x1": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "1x1",
+      "CC",
+      "1x1"
+    ],
+    "latency": 57.579,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.653008,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::I,trans-mm,canon,1x1": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "I",
+      "trans-mm",
+      "canon",
+      "1x1"
+    ],
+    "latency": 58.815,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.6570356,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::trans-mm,CC": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "trans-mm",
+      "CC"
+    ],
+    "latency": 59.151,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.6611702,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::trans-mm,T,I": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "trans-mm",
+      "T",
+      "I"
+    ],
+    "latency": 61.631,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.6653352,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::I,canon,pad": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "I",
+      "canon",
+      "pad"
+    ],
+    "latency": 61.854,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.6694174,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::canon,I,pad,gen": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "I",
+      "pad",
+      "gen"
+    ],
+    "latency": 57.676,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.673167,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::CC,T,I,trans-mm": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC",
+      "T",
+      "I",
+      "trans-mm"
+    ],
+    "latency": 45.426,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.677026,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::gen,intrinsics": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "gen",
+      "intrinsics"
+    ],
+    "latency": 64.789,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.6807601,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::trans-mm,T": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "trans-mm",
+      "T"
+    ],
+    "latency": 65.195,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.684713,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::pad,1x1,trans-mm": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "pad",
+      "1x1",
+      "trans-mm"
+    ],
+    "latency": 63.24,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.6885262,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::CC,gen,T,CC": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC",
+      "gen",
+      "T",
+      "CC"
+    ],
+    "latency": 55.189,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.6924767,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::canon,gen,T": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "gen",
+      "T"
+    ],
+    "latency": 59.372,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.696526,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::CC,gen,1x1": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC",
+      "gen",
+      "1x1"
+    ],
+    "latency": 56.988,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.700469,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::T,I,trans-mm,T": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "T",
+      "I",
+      "trans-mm",
+      "T"
+    ],
+    "latency": 60.667,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.7043257,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::pad,T,CC,I": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "pad",
+      "T",
+      "CC",
+      "I"
+    ],
+    "latency": 45.981,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.7082014,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "resnet18::default_knobs::1x1,intrinsics,pad,trans-mm": {
+    "model": "resnet18",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "1x1",
+      "intrinsics",
+      "pad",
+      "trans-mm"
+    ],
+    "latency": 62.015,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439942.712638,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "mlp::default_knobs::": {
+    "model": "mlp",
+    "knob_config": "default_knobs",
+    "sequence": [],
+    "latency": 12.3,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439946.6858096,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "mlp::default_knobs::canon": {
+    "model": "mlp",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon"
+    ],
+    "latency": 11.16,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439946.690303,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "mlp::default_knobs::gen": {
+    "model": "mlp",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "gen"
+    ],
+    "latency": 12.031,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439946.6946359,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "mlp::default_knobs::pad": {
+    "model": "mlp",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "pad"
+    ],
+    "latency": 12.064,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439946.6987362,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "mlp::default_knobs::intrinsics": {
+    "model": "mlp",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "intrinsics"
+    ],
+    "latency": 11.885,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439946.7031965,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "mlp::default_knobs::trans-mm": {
+    "model": "mlp",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "trans-mm"
+    ],
+    "latency": 12.171,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439946.7073557,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "mlp::default_knobs::canon,gen": {
+    "model": "mlp",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "gen"
+    ],
+    "latency": 11.051,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439946.7116153,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "mlp::default_knobs::canon,pad": {
+    "model": "mlp",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "pad"
+    ],
+    "latency": 11.2,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439946.7159996,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "mlp::default_knobs::canon,intrinsics": {
+    "model": "mlp",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "intrinsics"
+    ],
+    "latency": 10.957,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439946.720326,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "mlp::default_knobs::canon,trans-mm": {
+    "model": "mlp",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "trans-mm"
+    ],
+    "latency": 10.92,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439946.7244768,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "mlp::default_knobs::intrinsics,canon": {
+    "model": "mlp",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "intrinsics",
+      "canon"
+    ],
+    "latency": 11.528,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439946.7288384,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "mlp::default_knobs::intrinsics,gen": {
+    "model": "mlp",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "intrinsics",
+      "gen"
+    ],
+    "latency": 11.702,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439946.7328446,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "mlp::default_knobs::intrinsics,pad": {
+    "model": "mlp",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "intrinsics",
+      "pad"
+    ],
+    "latency": 11.83,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439946.73692,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "mlp::default_knobs::intrinsics,trans-mm": {
+    "model": "mlp",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "intrinsics",
+      "trans-mm"
+    ],
+    "latency": 11.747,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439946.7408974,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "mlp::default_knobs::canon,trans-mm,canon": {
+    "model": "mlp",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "trans-mm",
+      "canon"
+    ],
+    "latency": 10.876,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439946.745042,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "mlp::default_knobs::canon,trans-mm,gen": {
+    "model": "mlp",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "trans-mm",
+      "gen"
+    ],
+    "latency": 10.687,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439946.7492204,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "mlp::default_knobs::canon,trans-mm,pad": {
+    "model": "mlp",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "trans-mm",
+      "pad"
+    ],
+    "latency": 10.791,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439946.753405,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "mlp::default_knobs::canon,trans-mm,intrinsics": {
+    "model": "mlp",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "trans-mm",
+      "intrinsics"
+    ],
+    "latency": 10.717,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439946.7576427,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "mlp::default_knobs::canon,intrinsics,canon": {
+    "model": "mlp",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "intrinsics",
+      "canon"
+    ],
+    "latency": 10.763,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439946.7620955,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "mlp::default_knobs::canon,intrinsics,gen": {
+    "model": "mlp",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "intrinsics",
+      "gen"
+    ],
+    "latency": 10.584,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439946.766993,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "mlp::default_knobs::canon,intrinsics,pad": {
+    "model": "mlp",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "intrinsics",
+      "pad"
+    ],
+    "latency": 10.828,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439946.7712274,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "mlp::default_knobs::canon,intrinsics,trans-mm": {
+    "model": "mlp",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "intrinsics",
+      "trans-mm"
+    ],
+    "latency": 10.589,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439946.7754052,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "mlp::default_knobs::canon,gen,intrinsics": {
+    "model": "mlp",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "gen",
+      "intrinsics"
+    ],
+    "latency": 10.768,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439946.783914,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "mlp::default_knobs::trans-mm,canon,trans-mm": {
+    "model": "mlp",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "trans-mm",
+      "canon",
+      "trans-mm"
+    ],
+    "latency": 11.432,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439946.7890666,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "mlp::default_knobs::canon,pad,trans-mm": {
+    "model": "mlp",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "pad",
+      "trans-mm"
+    ],
+    "latency": 10.855,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439946.7936988,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "mlp::default_knobs::pad,canon,pad": {
+    "model": "mlp",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "pad",
+      "canon",
+      "pad"
+    ],
+    "latency": 11.572,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439946.7983265,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "mlp::default_knobs::intrinsics,pad,intrinsics": {
+    "model": "mlp",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "intrinsics",
+      "pad",
+      "intrinsics"
+    ],
+    "latency": 11.71,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439946.8030014,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "mlp::default_knobs::trans-mm,pad": {
+    "model": "mlp",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "trans-mm",
+      "pad"
+    ],
+    "latency": 11.88,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439946.8076982,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "mlp::default_knobs::pad,intrinsics,gen": {
+    "model": "mlp",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "pad",
+      "intrinsics",
+      "gen"
+    ],
+    "latency": 11.5,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439946.8121626,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "mlp::default_knobs::canon,gen,pad": {
+    "model": "mlp",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "gen",
+      "pad"
+    ],
+    "latency": 10.841,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793439946.8165016,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::canon,CC,I,1x1,canon": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "CC",
+      "I",
+      "1x1",
+      "canon"
+    ],
+    "latency": 14.836,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793440594.41575,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::canon,CC,I,1x1,CC": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "CC",
+      "I",
+      "1x1",
+      "CC"
+    ],
+    "latency": 14.265,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793440594.4222336,
+    "metadata": {
+      "mode": "SIMULATED"
+    }
+  },
+  "small_cnn::default_knobs::CC,canon,1x1": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC",
+      "canon",
+      "1x1"
+    ],
+    "latency": Infinity,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793441220.9633148,
+    "metadata": {
+      "mode": "REAL",
+      "status": "OK"
+    }
+  },
+  "small_cnn::default_knobs::trans-mm,CC,intrinsics": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "trans-mm",
+      "CC",
+      "intrinsics"
+    ],
+    "latency": Infinity,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793441222.2080326,
+    "metadata": {
+      "mode": "REAL",
+      "status": "OK"
+    }
+  },
+  "small_cnn::default_knobs::canon,gen,intrinsics": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "canon",
+      "gen",
+      "intrinsics"
+    ],
+    "latency": Infinity,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793441222.9715917,
+    "metadata": {
+      "mode": "REAL",
+      "status": "OK"
+    }
+  },
+  "small_cnn::default_knobs::gen,canon,T": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "gen",
+      "canon",
+      "T"
+    ],
+    "latency": Infinity,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793441224.0629408,
+    "metadata": {
+      "mode": "REAL",
+      "status": "OK"
+    }
+  },
+  "small_cnn::default_knobs::pad,1x1,gen": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "pad",
+      "1x1",
+      "gen"
+    ],
+    "latency": Infinity,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793441225.1634774,
+    "metadata": {
+      "mode": "REAL",
+      "status": "OK"
+    }
+  },
+  "small_cnn::default_knobs::gen,canon": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "gen",
+      "canon"
+    ],
+    "latency": Infinity,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793441225.9071565,
+    "metadata": {
+      "mode": "REAL",
+      "status": "OK"
+    }
+  },
+  "small_cnn::default_knobs::intrinsics,CC,intrinsics": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "intrinsics",
+      "CC",
+      "intrinsics"
+    ],
+    "latency": Infinity,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793441227.153478,
+    "metadata": {
+      "mode": "REAL",
+      "status": "OK"
+    }
+  },
+  "small_cnn::default_knobs::CC,canon,gen": {
+    "model": "small_cnn",
+    "knob_config": "default_knobs",
+    "sequence": [
+      "CC",
+      "canon",
+      "gen"
+    ],
+    "latency": Infinity,
+    "final_mean": null,
+    "final_std": null,
+    "timestamp": 1793441228.3288217,
+    "metadata": {
+      "mode": "REAL",
+      "status": "OK"
+    }
+  }
+}

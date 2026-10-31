@@ -1,0 +1,55 @@
+passes:
+- name: canonicalize
+  short: canon
+  iree_pass: canonicalize
+  max_count: 2
+  requires: null
+  description: Standard MLIR canonicalization patterns and constant folding
+- name: convert-conv-to-channels-last
+  short: CC
+  iree_pass: iree-preprocessing-convert-conv-to-channels-last
+  max_count: 2
+  requires: has_conv
+  description: Convert convolutions from NCHW to NHWC channels-last layout
+- name: convert-conv2d-to-img2col
+  short: I
+  iree_pass: iree-global-opt-convert-conv2d-to-img2col
+  max_count: 2
+  requires: has_conv
+  description: Lower 2D convolutions to Img2Col matrix multiplication
+- name: transpose-convolution-pipeline
+  short: T
+  iree_pass: iree-preprocessing-transpose-convolution-pipeline
+  max_count: 2
+  requires: has_conv
+  description: Pipeline for transposing and canonicalizing convolution weights
+- name: linalg-generalize-named-ops
+  short: gen
+  iree_pass: linalg-generalize-named-ops
+  max_count: 2
+  requires: null
+  description: Generalize named Linalg ops to generic tensor operations
+- name: convert-1x1-filter-conv2d-to-matmul
+  short: 1x1
+  iree_pass: iree-preprocessing-convert-1x1-filter-conv2d-to-matmul
+  max_count: 2
+  requires: has_conv
+  description: Convert 1x1 filter convolutions directly into matmul ops
+- name: pad-linalg-ops
+  short: pad
+  iree_pass: iree-preprocessing-pad-linalg-ops
+  max_count: 2
+  requires: null
+  description: Pad linalg operations to hardware-friendly alignment multiples
+- name: pad-to-intrinsics
+  short: intrinsics
+  iree_pass: iree-preprocessing-pad-to-intrinsics
+  max_count: 2
+  requires: null
+  description: Pad tensors to match target CPU/SIMD intrinsic shapes
+- name: transpose-matmul
+  short: trans-mm
+  iree_pass: iree-preprocessing-transpose-matmul-pass
+  max_count: 2
+  requires: null
+  description: Transpose matrix multiplication operands for cache efficiency

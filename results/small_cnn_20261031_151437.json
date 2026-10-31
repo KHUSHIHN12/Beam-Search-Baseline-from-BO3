@@ -1,0 +1,78 @@
+{
+  "timestamp": "20261031_151437",
+  "beam_search": {
+    "model_name": "small_cnn",
+    "mode": "REAL",
+    "beam_width": 1,
+    "max_depth": 1,
+    "baseline_latency": 24.5,
+    "best_sequence": [
+      "CC"
+    ],
+    "best_latency": 21.901,
+    "speedup": 1.119,
+    "final_latency": 21.901,
+    "final_std": 0.0,
+    "total_compiles": 5,
+    "nodes": [
+      {
+        "depth": 0,
+        "sequence": [],
+        "latency": 24.5,
+        "kept_in_beam": true,
+        "parent_sequence": [],
+        "compile_idx": 1,
+        "speedup_vs_baseline": 1.0
+      },
+      {
+        "depth": 1,
+        "sequence": [
+          "canon"
+        ],
+        "latency": 22.229,
+        "kept_in_beam": false,
+        "parent_sequence": [],
+        "compile_idx": 2,
+        "speedup_vs_baseline": 1.102
+      },
+      {
+        "depth": 1,
+        "sequence": [
+          "CC"
+        ],
+        "latency": 21.901,
+        "kept_in_beam": true,
+        "parent_sequence": [],
+        "compile_idx": 3,
+        "speedup_vs_baseline": 1.119
+      },
+      {
+        "depth": 1,
+        "sequence": [
+          "I"
+        ],
+        "latency": 23.463,
+        "kept_in_beam": false,
+        "parent_sequence": [],
+        "compile_idx": 4,
+        "speedup_vs_baseline": 1.044
+      },
+      {
+        "depth": 1,
+        "sequence": [
+          "T"
+        ],
+        "latency": 23.578,
+        "kept_in_beam": false,
+        "parent_sequence": [],
+        "compile_idx": 5,
+        "speedup_vs_baseline": 1.039
+      }
+    ],
+    "depth_best": {
+      "0": 24.5,
+      "1": 21.901
+    }
+  },
+  "random_search": null
+}

@@ -1,0 +1,43 @@
+depth,sequence,latency_ms,kept_in_beam,speedup_vs_baseline,parent_sequence,compile_idx
+0,EMPTY,24.5,True,1.0,ROOT,1
+1,canon,22.229,True,1.102,ROOT,2
+1,CC,inf,False,0.0,ROOT,3
+1,I,23.463,True,1.044,ROOT,4
+1,T,23.578,False,1.039,ROOT,5
+1,gen,23.965,False,1.022,ROOT,6
+1,1x1,23.612,False,1.038,ROOT,7
+1,pad,24.03,False,1.02,ROOT,8
+1,intrinsics,23.674,False,1.035,ROOT,9
+1,trans-mm,24.243,False,1.011,ROOT,10
+2,canon -> CC,19.755,True,1.24,canon,11
+2,canon -> I,21.049,False,1.164,canon,12
+2,canon -> T,21.529,False,1.138,canon,13
+2,canon -> gen,22.013,False,1.113,canon,14
+2,canon -> 1x1,21.357,False,1.147,canon,15
+2,canon -> pad,22.309,False,1.098,canon,16
+2,canon -> intrinsics,21.825,False,1.123,canon,17
+2,canon -> trans-mm,21.751,False,1.126,canon,18
+2,I -> canon,22.339,False,1.097,I,19
+2,I -> CC,19.741,True,1.241,I,20
+2,I -> T,22.679,False,1.08,I,21
+2,I -> gen,22.719,False,1.078,I,22
+2,I -> 1x1,22.504,False,1.089,I,23
+2,I -> pad,23.048,False,1.063,I,24
+2,I -> intrinsics,22.723,False,1.078,I,25
+2,I -> trans-mm,22.797,False,1.075,I,26
+3,I -> CC -> canon,19.018,False,1.288,I -> CC,27
+3,I -> CC -> I,19.575,False,1.252,I -> CC,28
+3,I -> CC -> T,19.435,False,1.261,I -> CC,29
+3,I -> CC -> gen,19.545,False,1.254,I -> CC,30
+3,I -> CC -> 1x1,19.224,False,1.274,I -> CC,31
+3,I -> CC -> pad,19.592,False,1.251,I -> CC,32
+3,I -> CC -> intrinsics,19.123,False,1.281,I -> CC,33
+3,I -> CC -> trans-mm,19.67,False,1.246,I -> CC,34
+3,canon -> CC -> canon,19.61,False,1.249,canon -> CC,35
+3,canon -> CC -> I,15.715,True,1.559,canon -> CC,36
+3,canon -> CC -> T,19.465,False,1.259,canon -> CC,37
+3,canon -> CC -> gen,19.519,False,1.255,canon -> CC,38
+3,canon -> CC -> 1x1,18.901,True,1.296,canon -> CC,39
+3,canon -> CC -> pad,19.668,False,1.246,canon -> CC,40
+3,canon -> CC -> intrinsics,19.291,False,1.27,canon -> CC,41
+3,canon -> CC -> trans-mm,19.476,False,1.258,canon -> CC,42

@@ -1,0 +1,6 @@
+depth,sequence,latency_ms,kept_in_beam,speedup_vs_baseline,parent_sequence,compile_idx
+0,EMPTY,24.5,True,1.0,ROOT,1
+1,canon,22.229,False,1.102,ROOT,2
+1,CC,21.901,True,1.119,ROOT,3
+1,I,23.463,False,1.044,ROOT,4
+1,T,23.578,False,1.039,ROOT,5
