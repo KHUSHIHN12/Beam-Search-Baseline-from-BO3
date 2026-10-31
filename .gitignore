@@ -22,3 +22,4 @@ models/resnet18.onnx
 # System files
 .DS_Store
 Thumbs.db
+
