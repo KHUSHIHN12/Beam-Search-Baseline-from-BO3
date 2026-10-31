@@ -1,0 +1,384 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+/* Base reset and root typography */
+html, body, [class*="css"] {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #1C1B19;
+    background-color: #F7F6F3;
+    font-size: 14px;
+}
+
+/* Hide default Streamlit clutter */
+#MainMenu { visibility: hidden !important; }
+footer { visibility: hidden !important; }
+header { visibility: hidden !important; }
+.stDeployButton { display: none !important; }
+
+/* Constrain main app width and reduce excessive top padding */
+.block-container {
+    max-width: 1200px !important;
+    padding-top: 24px !important;
+    padding-bottom: 48px !important;
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+}
+
+/* Sidebar styling */
+[data-testid="stSidebar"] {
+    background-color: #FAF9F7 !important;
+    border-right: 1px solid #E4E2DC !important;
+}
+
+[data-testid="stSidebar"] .block-container {
+    padding-top: 24px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+}
+
+/* Sidebar Section Headers */
+.sidebar-section-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #6B6963;
+    margin-top: 24px;
+    margin-bottom: 8px;
+}
+
+/* Top Navigation / Header Bar */
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 16px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid #E4E2DC;
+}
+
+.top-title-group {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+}
+
+.top-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: #1C1B19;
+    letter-spacing: -0.02em;
+    margin: 0;
+}
+
+.top-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: #6B6963;
+    margin: 0;
+}
+
+/* Status Pill Badges */
+.mode-pill {
+    display: inline-flex;
+    align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: 9999px;
+    letter-spacing: 0.02em;
+}
+
+.mode-pill-simulated {
+    color: #92400E;
+    background-color: #FEF9C3;
+    border: 1px solid #F59E0B;
+}
+
+.mode-pill-real {
+    color: #0F766E;
+    background-color: #E6F2F0;
+    border: 1px solid #0F766E;
+}
+
+/* Primary and secondary buttons */
+button[kind="primary"] {
+    background-color: #0F766E !important;
+    color: #FFFFFF !important;
+    border: 1px solid #0F766E !important;
+    border-radius: 6px !important;
+    font-weight: 500 !important;
+    font-size: 13px !important;
+    padding: 6px 16px !important;
+    transition: background-color 0.15s ease !important;
+    box-shadow: none !important;
+}
+
+button[kind="primary"]:hover {
+    background-color: #0D645D !important;
+    border-color: #0D645D !important;
+}
+
+button[kind="secondary"] {
+    background-color: #FFFFFF !important;
+    color: #1C1B19 !important;
+    border: 1px solid #E4E2DC !important;
+    border-radius: 6px !important;
+    font-size: 13px !important;
+    box-shadow: none !important;
+}
+
+button[kind="secondary"]:hover {
+    background-color: #F7F6F3 !important;
+    border-color: #C9C6BE !important;
+}
+
+/* Tabs styling */
+.stTabs [data-baseweb="tab-list"] {
+    gap: 24px;
+    border-bottom: 1px solid #E4E2DC;
+    background-color: transparent;
+}
+
+.stTabs [data-baseweb="tab"] {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    color: #6B6963 !important;
+    padding: 10px 4px 12px 4px !important;
+    background-color: transparent !important;
+    border: none !important;
+}
+
+.stTabs [aria-selected="true"] {
+    color: #0F766E !important;
+    font-weight: 600 !important;
+    border-bottom: 2px solid #0F766E !important;
+}
+
+/* Unified Results Metrics Container */
+.metrics-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background-color: #FFFFFF;
+    border: 1px solid #E4E2DC;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    overflow: hidden;
+}
+
+.metric-cell {
+    padding: 16px 20px;
+    border-right: 1px solid #E4E2DC;
+}
+
+.metric-cell:last-child {
+    border-right: none;
+}
+
+.metric-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #6B6963;
+    margin-bottom: 6px;
+}
+
+.metric-value {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 26px;
+    font-weight: 600;
+    color: #1C1B19;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 4px;
+}
+
+.metric-value-accent {
+    color: #0F766E;
+}
+
+.metric-delta {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: #6B6963;
+}
+
+.metric-delta-positive {
+    color: #0F766E;
+    font-weight: 500;
+}
+
+.metric-delta-negative {
+    color: #B4412F;
+}
+
+/* Pass Sequence Horizontal Chip Chain */
+.sequence-container {
+    background-color: #FFFFFF;
+    border: 1px solid #E4E2DC;
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin-bottom: 24px;
+}
+
+.sequence-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #6B6963;
+    margin-bottom: 10px;
+}
+
+.chip-chain {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.pass-chip {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-weight: 500;
+    color: #0F766E;
+    background-color: #E6F2F0;
+    border: 1px solid #C4E3DE;
+    padding: 3px 9px;
+    border-radius: 4px;
+}
+
+.chip-arrow {
+    color: #9A978F;
+    font-size: 13px;
+    font-weight: 400;
+    user-select: none;
+}
+
+.sequence-caption {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: #6B6963;
+    line-height: 1.5;
+    word-break: break-all;
+}
+
+/* Chart Title and Caption Elements */
+.chart-heading {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: #1C1B19;
+    margin-top: 16px;
+    margin-bottom: 4px;
+}
+
+.chart-caption {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: #6B6963;
+    margin-top: 4px;
+    margin-bottom: 20px;
+}
+
+/* Background tab text styling (max-width 680px) */
+.background-column {
+    max-width: 680px;
+    margin-top: 12px;
+}
+
+.background-section {
+    margin-bottom: 24px;
+}
+
+.background-section h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1C1B19;
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+.background-section p {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #1C1B19;
+    margin-bottom: 8px;
+}
+
+/* Static Pipeline Diagram */
+.pipeline-diagram {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    background-color: #FFFFFF;
+    border: 1px solid #E4E2DC;
+    border-radius: 8px;
+    margin-top: 16px;
+    margin-bottom: 24px;
+}
+
+.pipeline-box {
+    flex: 1;
+    text-align: center;
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: 1px solid #E4E2DC;
+    background-color: #FAFAFA;
+}
+
+.pipeline-box-highlight {
+    background-color: #E6F2F0;
+    border-color: #0F766E;
+}
+
+.pipeline-box-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: #1C1B19;
+}
+
+.pipeline-box-highlight .pipeline-box-title {
+    color: #0F766E;
+}
+
+.pipeline-box-sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: #6B6963;
+    margin-top: 2px;
+}
+
+.pipeline-arrow {
+    color: #9A978F;
+    font-size: 16px;
+    font-weight: 400;
+    user-select: none;
+}
+
+/* Quiet status / run indicator */
+.quiet-status {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: #6B6963;
+    margin-bottom: 12px;
+}
+
+.quiet-success {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: #0F766E;
+    font-weight: 500;
+    margin-bottom: 16px;
+}

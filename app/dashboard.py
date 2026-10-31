@@ -1,4 +1,4 @@
-"""dashboard.py - Interactive Streamlit Demo Dashboard for BeamPass."""
+"""dashboard.py - Clean, data-first Streamlit engineering dashboard for BeamPass."""
 
 from __future__ import annotations
 
@@ -6,12 +6,11 @@ import json
 import math
 import os
 import sys
+import textwrap
 import time
 from typing import Dict, List, Optional
 
 import pandas as pd
-import plotly.express as px
-import plotly.graph_objects as go
 import streamlit as st
 
 # Add workspace root to sys.path
@@ -19,6 +18,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if BASE_DIR not in sys.path:
     sys.path.insert(0, BASE_DIR)
 
+from app.theme import (
+    build_beam_tree_chart,
+    build_comparison_bar_chart,
+    build_latency_depth_chart,
+)
 from beampass.beam_search import BeamNode, BeamSearch, BeamSearchResult
 from beampass.cache import EvaluationCache
 from beampass.evaluator import Evaluator, IREEEvaluator, MockEvaluator
@@ -28,55 +32,35 @@ from beampass.random_search import RandomSearch, RandomSearchResult
 from beampass.results import save_run_results
 
 
-# Page setup
+# Page configuration
 st.set_page_config(
-    page_title="BeamPass | IREE Pass-Order Optimizer",
-    page_icon="⚡",
+    page_title="BeamPass | Compiler Pass Optimizer",
     layout="wide",
     initial_sidebar_state="expanded",
 )
 
-# Custom Styling
-st.markdown(
-    """
-    <style>
-    .metric-card {
-        background-color: #f8fafc;
-        border: 1px solid #e2e8f0;
-        border-radius: 8px;
-        padding: 16px;
-        text-align: center;
-    }
-    .stMetric {
-        background-color: #f1f5f9;
-        border-radius: 8px;
-        padding: 12px;
-        border-left: 4px solid #3b82f6;
-    }
-    .badge-sim {
-        background-color: #fef3c7;
-        color: #92400e;
-        padding: 4px 10px;
-        border-radius: 6px;
-        font-weight: 600;
-        font-size: 0.85rem;
-    }
-    .badge-real {
-        background-color: #d1fae5;
-        color: #065f46;
-        padding: 4px 10px;
-        border-radius: 6px;
-        font-weight: 600;
-        font-size: 0.85rem;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True,
-)
+# Inject custom design system CSS
+styles_path = os.path.join(os.path.dirname(__file__), "styles.css")
+if os.path.exists(styles_path):
+    with open(styles_path, "r", encoding="utf-8") as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 
-def load_saved_results() -> List[str]:
-    """Scans results/ directory for saved json experiments."""
+PASS_FULL_NAMES = {
+    "canon": "canonicalize",
+    "CC": "iree-preprocessing-convert-conv-to-channels-last",
+    "I": "iree-global-opt-convert-conv2d-to-img2col",
+    "T": "iree-preprocessing-transpose-convolution-pipeline",
+    "gen": "linalg-generalize-named-ops",
+    "1x1": "iree-preprocessing-convert-1x1-filter-conv2d-to-matmul",
+    "pad": "iree-preprocessing-pad-linalg-ops",
+    "intrinsics": "iree-preprocessing-pad-to-intrinsics",
+    "trans-mm": "iree-preprocessing-transpose-matmul-pass",
+}
+
+
+def load_saved_runs() -> List[str]:
+    """Scans results/ directory for saved run JSON files."""
     res_dir = os.path.join(BASE_DIR, "results")
     if not os.path.exists(res_dir):
         return []
@@ -84,247 +68,77 @@ def load_saved_results() -> List[str]:
     return sorted(files, reverse=True)
 
 
-def create_beam_tree_figure(nodes: List[BeamNode], baseline_latency: float) -> go.Figure:
-    """Builds an interactive Plotly tree diagram of all explored nodes."""
-    fig = go.Figure()
-
-    # Create mapping of sequence tuple to (depth, latency)
-    coords: Dict[tuple, tuple] = {}
-    for n in nodes:
-        seq_key = tuple(n.sequence)
-        coords[seq_key] = (n.depth, n.latency)
-
-    # 1. Draw connecting tree edges from parent to child
-    edge_x = []
-    edge_y = []
-    for n in nodes:
-        if n.parent_sequence or n.depth > 0:
-            parent_key = tuple(n.parent_sequence)
-            if parent_key in coords:
-                p_depth, p_lat = coords[parent_key]
-                edge_x.extend([p_depth, n.depth, None])
-                edge_y.extend([p_lat, n.latency, None])
-
-    if edge_x:
-        fig.add_trace(
-            go.Scatter(
-                x=edge_x,
-                y=edge_y,
-                mode="lines",
-                line=dict(color="#cbd5e1", width=1.5),
-                hoverinfo="none",
-                showlegend=False,
-            )
-        )
-
-    # 2. Add Pruned nodes
-    pruned = [n for n in nodes if not n.kept_in_beam and n.depth > 0 and not math.isinf(n.latency)]
-    if pruned:
-        fig.add_trace(
-            go.Scatter(
-                x=[n.depth for n in pruned],
-                y=[n.latency for n in pruned],
-                mode="markers",
-                marker=dict(
-                    size=10,
-                    color="#94a3b8",
-                    symbol="circle",
-                    opacity=0.7,
-                    line=dict(color="#475569", width=1),
-                ),
-                text=[f"Seq: {n.sequence_str}<br>Latency: {n.latency:.2f} ms<br>Speedup: {n.speedup_vs_baseline:.2f}x<br>Status: Pruned" for n in pruned],
-                hoverinfo="text",
-                name="Pruned Candidate",
-            )
-        )
-
-    # 3. Add Kept in Beam nodes
-    kept = [n for n in nodes if n.kept_in_beam and not math.isinf(n.latency)]
-    if kept:
-        fig.add_trace(
-            go.Scatter(
-                x=[n.depth for n in kept],
-                y=[n.latency for n in kept],
-                mode="markers+text",
-                marker=dict(
-                    size=14,
-                    color="#10b981",
-                    symbol="diamond",
-                    line=dict(color="#064e3b", width=2),
-                ),
-                text=[n.sequence[-1] if n.sequence else "ROOT" for n in kept],
-                textposition="top center",
-                textfont=dict(size=10, color="#047857"),
-                hovertext=[f"<b>Kept in Beam</b><br>Seq: {n.sequence_str}<br>Latency: {n.latency:.2f} ms<br>Speedup: {n.speedup_vs_baseline:.2f}x" for n in kept],
-                hoverinfo="text",
-                name="Kept in Beam (Top B)",
-            )
-        )
-
-    # 4. Add Baseline reference line
-    fig.add_hline(
-        y=baseline_latency,
-        line_dash="dash",
-        line_color="#ef4444",
-        annotation_text=f"-O3 Baseline ({baseline_latency:.2f} ms)",
-        annotation_position="bottom right",
-    )
-
-    fig.update_layout(
-        title="<b>Beam Search Tree Exploration</b> (Green = Kept in Beam, Gray = Pruned)",
-        xaxis=dict(title="Search Depth", tickmode="linear", dtick=1),
-        yaxis=dict(title="Latency (ms) [Lower is Better]"),
-        hovermode="closest",
-        legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
-        margin=dict(l=40, r=40, t=50, b=40),
-        height=450,
-    )
-    return fig
-
-
-def create_comparison_figure(
-    baseline_lat: float,
-    rand_lat: float,
-    beam_lat: float,
-    model_name: str,
-) -> go.Figure:
-    """Creates side-by-side comparison bar chart."""
-    categories = ["-O3 Baseline", "Random Search", "Beam Search"]
-    latencies = [baseline_lat, rand_lat, beam_lat]
-    speedups = [1.0, baseline_lat / rand_lat if rand_lat > 0 else 1.0, baseline_lat / beam_lat if beam_lat > 0 else 1.0]
-    colors = ["#94a3b8", "#f59e0b", "#10b981"]
-
-    text_labels = [f"{lat:.2f} ms<br>({sp:.2f}x)" for lat, sp in zip(latencies, speedups)]
-
-    fig = go.Figure(
-        data=[
-            go.Bar(
-                x=categories,
-                y=latencies,
-                text=text_labels,
-                textposition="auto",
-                marker_color=colors,
-                width=0.45,
-            )
-        ]
-    )
-
-    fig.update_layout(
-        title=f"<b>Performance Comparison: {model_name}</b>",
-        yaxis_title="Latency (ms) [Lower is Better]",
-        margin=dict(l=40, r=40, t=50, b=40),
-        height=380,
-    )
-    return fig
-
-
-def create_depth_curve_figure(depth_best: Dict[int, float], baseline_lat: float) -> go.Figure:
-    """Creates line chart showing latency improvement with search depth."""
-    depths = sorted(depth_best.keys())
-    lats = [depth_best[d] for d in depths]
-
-    fig = go.Figure()
-    fig.add_trace(
-        go.Scatter(
-            x=depths,
-            y=lats,
-            mode="lines+markers",
-            line=dict(color="#2563eb", width=3),
-            marker=dict(size=8, color="#1d4ed8"),
-            name="Best Latency at Depth",
-        )
-    )
-    fig.add_hline(
-        y=baseline_lat,
-        line_dash="dash",
-        line_color="#ef4444",
-        annotation_text=f"-O3 Baseline: {baseline_lat:.2f} ms",
-    )
-    fig.update_layout(
-        title="<b>Best Latency vs Search Depth</b>",
-        xaxis=dict(title="Depth", tickmode="linear", dtick=1),
-        yaxis=dict(title="Latency (ms)"),
-        margin=dict(l=40, r=40, t=50, b=40),
-        height=380,
-    )
-    return fig
-
-
-# ==========================================
-# SIDEBAR
-# ==========================================
-st.sidebar.title("⚡ BeamPass Controls")
-st.sidebar.markdown("Compiler Pass-Order Optimizer for IREE")
-st.sidebar.divider()
-
-saved_files = load_saved_results()
-selected_saved = None
-if saved_files:
-    load_choice = st.sidebar.selectbox("📂 Load Pre-recorded Run:", ["(None - Run New Optimization)"] + saved_files)
-    if load_choice != "(None - Run New Optimization)":
-        selected_saved = os.path.join(BASE_DIR, "results", load_choice)
-
-model_choice = st.sidebar.selectbox(
-    "Target Model Architecture:",
-    ["small_cnn", "resnet18", "mobilenet_v2", "mlp"],
-    index=0,
-    help="small_cnn: 3-layer CNN for fast demo (<5s). mlp: Dense net testing legality mask.",
-)
-
-beam_width = st.sidebar.slider("Beam Width (B):", min_value=1, max_value=4, value=2, help="Paper default B = 2")
-max_depth = st.sidebar.slider("Maximum Search Depth:", min_value=1, max_value=6, value=4)
-patience = st.sidebar.slider("Early Stopping Patience:", min_value=1, max_value=3, value=2)
-
-execution_mode = st.sidebar.radio(
-    "Execution Mode:",
-    ["Mock (Fast Simulated)", "Real IREE (Compile + Benchmark)"],
-    index=0,
-    help="Mock mode is deterministic and works on any OS. Real mode executes iree-compile and iree-benchmark-module.",
-)
-is_mock = "Mock" in execution_mode
-
-run_button = st.sidebar.button("Run Beam Optimization", type="primary", use_container_width=True)
-
-# State initialization
+# Initialize session state
 if "result_data" not in st.session_state:
     st.session_state["result_data"] = None
 
-
-# ==========================================
-# MAIN PAGE HEADER
-# ==========================================
-col_hdr, col_badge = st.columns([4, 1])
-with col_hdr:
-    st.title("BeamPass: Beam-Search Pass-Order Optimizer")
-    st.caption("Auto-tuning IREE preprocessing pipelines for neural networks against default `-O3`.")
-with col_badge:
-    badge_cls = "badge-sim" if is_mock else "badge-real"
-    badge_txt = "MODE: SIMULATED" if is_mock else "MODE: REAL IREE"
-    st.markdown(f"<div style='text-align: right; margin-top: 15px;'><span class='{badge_cls}'>{badge_txt}</span></div>", unsafe_allow_html=True)
-
-st.divider()
-
-
-# Handle loading pre-recorded result
-if selected_saved and not run_button:
+# Default to first pre-recorded run if available and not yet loaded
+saved_runs = load_saved_runs()
+if st.session_state["result_data"] is None and saved_runs:
     try:
-        with open(selected_saved, "r", encoding="utf-8") as f:
-            saved_content = json.load(f)
-            st.session_state["result_data"] = saved_content
-            st.sidebar.success(f"Loaded: {os.path.basename(selected_saved)}")
-    except Exception as e:
-        st.sidebar.error(f"Failed to load result: {e}")
+        with open(os.path.join(BASE_DIR, "results", saved_runs[0]), "r", encoding="utf-8") as f:
+            st.session_state["result_data"] = json.load(f)
+    except Exception:
+        pass
 
 
 # ==========================================
-# EXECUTION LOGIC
+# SIDEBAR CONTROLS
 # ==========================================
-if run_button:
+st.sidebar.markdown('<div class="sidebar-section-label">Workload</div>', unsafe_allow_html=True)
+model_choice = st.sidebar.selectbox(
+    "Target Model Architecture",
+    ["small_cnn", "resnet18", "mobilenet_v2", "mlp"],
+    index=0,
+    format_func=lambda x: {
+        "small_cnn": "small_cnn (3-layer CNN)",
+        "resnet18": "resnet18 (ResNet-18)",
+        "mobilenet_v2": "mobilenet_v2 (MobileNetV2)",
+        "mlp": "mlp (Dense MLP, no conv)",
+    }.get(x, x),
+    label_visibility="collapsed",
+)
+
+st.sidebar.markdown('<div class="sidebar-section-label">Search</div>', unsafe_allow_html=True)
+beam_width = st.sidebar.slider("Beam width (B)", min_value=1, max_value=4, value=2)
+max_depth = st.sidebar.slider("Maximum search depth", min_value=1, max_value=6, value=4)
+patience = st.sidebar.slider("Early stopping patience", min_value=1, max_value=3, value=2)
+
+st.sidebar.markdown('<div class="sidebar-section-label">Execution</div>', unsafe_allow_html=True)
+execution_mode = st.sidebar.radio(
+    "Execution mode",
+    ["Simulated (deterministic mock)", "Real IREE (hardware benchmark)"],
+    index=0,
+    label_visibility="collapsed",
+)
+is_mock = "Simulated" in execution_mode
+
+run_clicked = st.sidebar.button("Run search", type="primary", use_container_width=True)
+
+st.sidebar.markdown('<div class="sidebar-section-label">Saved Run</div>', unsafe_allow_html=True)
+if saved_runs:
+    load_choice = st.sidebar.selectbox(
+        "Load saved run",
+        ["(Current / New run)"] + saved_runs,
+        label_visibility="collapsed",
+    )
+    if load_choice != "(Current / New run)":
+        saved_path = os.path.join(BASE_DIR, "results", load_choice)
+        try:
+            with open(saved_path, "r", encoding="utf-8") as f:
+                st.session_state["result_data"] = json.load(f)
+        except Exception:
+            pass
+
+
+# ==========================================
+# EXECUTION ACTION
+# ==========================================
+run_duration_str = None
+if run_clicked:
+    start_time = time.time()
     cache = EvaluationCache()
-    status_box = st.empty()
-    progress_bar = st.progress(0.0)
 
-    # Setup Evaluator
     evaluator: Evaluator
     if is_mock:
         evaluator = MockEvaluator(model_name=model_choice, seed=42, cache=cache)
@@ -332,71 +146,114 @@ if run_button:
         mlir_path = os.path.join(BASE_DIR, "models", f"{model_choice}.mlir")
         evaluator = IREEEvaluator(model_name=model_choice, model_mlir=mlir_path, cache=cache)
         if not evaluator.compiler.is_available() or not evaluator.benchmark.is_available():
-            st.warning("⚠️ Real IREE binaries not found. Falling back to MockEvaluator (SIMULATED).")
             evaluator = MockEvaluator(model_name=model_choice, seed=42, cache=cache)
 
     ir_info = IRInfo(has_conv=(model_choice.lower() != "mlp"))
 
-    # Live UI update structures
-    live_rows = []
+    progress_bar = st.progress(0.0)
+    status_line = st.empty()
     live_table_holder = st.empty()
+    live_rows = []
 
-    def dashboard_progress(event: dict):
+    def handle_progress(event: dict):
         ev = event.get("event")
         if ev == "start":
-            status_box.info(f"⏳ Established baseline -O3: **{event['baseline_latency']:.2f} ms**. Beginning depth exploration...")
+            status_line.markdown(
+                f'<div class="quiet-status">Baseline -O3: {event["baseline_latency"]:.2f} ms. Beginning search...</div>',
+                unsafe_allow_html=True,
+            )
         elif ev == "evaluating":
             pct = min(event["compile_idx"] / event["max_compiles"], 1.0)
             progress_bar.progress(pct)
-            status_box.markdown(f"**Exploring Depth {event['depth']}**: Testing `{' -> '.join(event['sequence'])}` (Candidate {event['compile_idx']}/{event['max_compiles']})")
+            seq_display = " > ".join(event["sequence"])
+            status_line.markdown(
+                f'<div class="quiet-status">Depth {event["depth"]} — candidate {event["compile_idx"]} of {event["max_compiles"]}: {seq_display}</div>',
+                unsafe_allow_html=True,
+            )
         elif ev == "node_evaluated":
             node: BeamNode = event["node"]
             live_rows.append(
                 {
                     "Depth": node.depth,
-                    "Pass Sequence": node.sequence_str,
-                    "Latency (ms)": f"{node.latency:.2f}" if not math.isinf(node.latency) else "FAILED",
+                    "Sequence": node.sequence_str,
+                    "Latency (ms)": f"{node.latency:.2f}" if not math.isinf(node.latency) else "failed",
                     "Speedup": f"{node.speedup_vs_baseline:.2f}x" if node.speedup_vs_baseline > 0 else "-",
                 }
             )
-            # Show the last 6 probed candidates live
-            live_table_holder.dataframe(pd.DataFrame(live_rows).tail(6), use_container_width=True)
+            live_table_holder.dataframe(pd.DataFrame(live_rows).tail(5), use_container_width=True)
 
-    optimizer = BeamSearch(
+    searcher = BeamSearch(
         evaluator=evaluator,
         ir_info=ir_info,
         beam_width=beam_width,
         max_depth=max_depth,
         patience=patience,
         max_compiles=50,
-        progress_callback=dashboard_progress,
+        progress_callback=handle_progress,
     )
 
-    with st.spinner("Executing Beam Search Optimization..."):
-        beam_res = optimizer.run()
+    beam_res = searcher.run()
 
-    # Also run matching Random Search baseline for comparison
-    with st.spinner("Evaluating Random Search baseline with matched compile budget..."):
-        rand_opt = RandomSearch(
-            evaluator=evaluator,
-            ir_info=ir_info,
-            max_depth=max_depth,
-            num_samples=min(beam_res.total_compiles - 1, 20),
-            seed=42,
-        )
-        rand_res = rand_opt.run()
+    # Matched random baseline
+    matched_budget = min(beam_res.total_compiles - 1, 20)
+    rand_searcher = RandomSearch(
+        evaluator=evaluator,
+        ir_info=ir_info,
+        max_depth=max_depth,
+        num_samples=matched_budget,
+        seed=42,
+    )
+    rand_res = rand_searcher.run()
 
-    progress_bar.progress(1.0)
-    status_box.success("✅ BeamPass Optimization Complete!")
+    elapsed = time.time() - start_time
+    mins, secs = int(elapsed // 60), int(elapsed % 60)
+    run_duration_str = f"Completed in {mins}m {secs:02d}s" if mins > 0 else f"Completed in {secs}s"
+
+    progress_bar.empty()
+    status_line.markdown(
+        f'<div class="quiet-success">{run_duration_str} ({beam_res.total_compiles} compilations evaluated)</div>',
+        unsafe_allow_html=True,
+    )
     live_table_holder.empty()
 
-    # Save to disk
     save_run_results(beam_res, rand_res)
-
     st.session_state["result_data"] = {
         "beam_search": beam_res.to_dict(),
         "random_search": rand_res.to_dict(),
+        "duration_str": run_duration_str,
     }
+
+
+# ==========================================
+# HEADER BAR
+# ==========================================
+if is_mock:
+    current_mode_is_sim = True
+elif st.session_state["result_data"]:
+    b_data = st.session_state["result_data"].get("beam_search", {})
+    current_mode_is_sim = (b_data.get("mode", "REAL") == "SIMULATED")
+else:
+    current_mode_is_sim = False
+
+pill_class = "mode-pill-simulated" if current_mode_is_sim else "mode-pill-real"
+pill_text = "Simulated" if current_mode_is_sim else "Real IREE"
+
+st.markdown(
+    textwrap.dedent(
+        f"""
+        <div class="top-header">
+            <div class="top-title-group">
+                <h1 class="top-title">BeamPass</h1>
+                <span class="top-subtitle">IREE preprocessing pass-order search</span>
+            </div>
+            <div>
+                <span class="mode-pill {pill_class}">{pill_text}</span>
+            </div>
+        </div>
+        """
+    ),
+    unsafe_allow_html=True,
+)
 
 
 # ==========================================
@@ -412,39 +269,80 @@ if data and "beam_search" in data:
     best_lat = b_data.get("final_latency", b_data.get("best_latency", 100.0))
     speedup = b_data.get("speedup", baseline_lat / best_lat if best_lat > 0 else 1.0)
     best_seq = b_data.get("best_sequence", [])
-    best_seq_str = " ➔ ".join(best_seq) if best_seq else "(empty -O3 default)"
-    mode_label = b_data.get("mode", "SIMULATED")
+    total_compiles = b_data.get("total_compiles", 0)
 
-    # Metric Cards
-    c1, c2, c3, c4 = st.columns(4)
-    with c1:
-        st.metric(label="-O3 Baseline Latency", value=f"{baseline_lat:.2f} ms")
-    with c2:
-        st.metric(
-            label="Optimized Latency",
-            value=f"{best_lat:.2f} ms",
-            delta=f"-{(baseline_lat - best_lat):.2f} ms",
-            delta_color="inverse",
-        )
-    with c3:
-        st.metric(label="Overall Speedup", value=f"{speedup:.2f}x", delta=f"+{((speedup - 1.0) * 100):.1f}%")
-    with c4:
-        st.metric(label="Total Compilations", value=str(b_data.get("total_compiles", 0)))
+    delta_lat = baseline_lat - best_lat
+    pct_speedup = (speedup - 1.0) * 100
 
-    st.info(f"🏆 **Optimal Discovered Pass Sequence:** `{best_seq_str}`")
+    # 1. Unified 4-column Results Container
+    st.markdown(
+        textwrap.dedent(
+            f"""
+            <div class="metrics-container">
+                <div class="metric-cell">
+                    <div class="metric-label">-O3 Baseline</div>
+                    <div class="metric-value">{baseline_lat:.2f} ms</div>
+                    <div class="metric-delta">Default IREE pipeline</div>
+                </div>
+                <div class="metric-cell">
+                    <div class="metric-label">Best Found</div>
+                    <div class="metric-value">{best_lat:.2f} ms</div>
+                    <div class="metric-delta metric-delta-positive">-{delta_lat:.2f} ms ({pct_speedup:.1f}% reduction)</div>
+                </div>
+                <div class="metric-cell">
+                    <div class="metric-label">Speedup</div>
+                    <div class="metric-value metric-value-accent">{speedup:.2f}x</div>
+                    <div class="metric-delta metric-delta-positive">Relative to -O3</div>
+                </div>
+                <div class="metric-cell">
+                    <div class="metric-label">Compilations</div>
+                    <div class="metric-value">{total_compiles}</div>
+                    <div class="metric-delta">Search budget used</div>
+                </div>
+            </div>
+            """
+        ),
+        unsafe_allow_html=True,
+    )
 
-    # Tabs
-    tab_tree, tab_charts, tab_table, tab_theory = st.tabs(
+    # 2. Best Sequence Display with Monospace Chips
+    chips_html = ""
+    if best_seq:
+        chip_items = []
+        for i, s in enumerate(best_seq):
+            chip_items.append(f'<span class="pass-chip">{s}</span>')
+            if i < len(best_seq) - 1:
+                chip_items.append('<span class="chip-arrow">&rarr;</span>')
+        chips_html = "".join(chip_items)
+        full_names_str = " &rarr; ".join([PASS_FULL_NAMES.get(s, s) for s in best_seq])
+    else:
+        chips_html = '<span class="pass-chip">(empty: default -O3)</span>'
+        full_names_str = "None (empty sequence fallback)"
+
+    st.markdown(
+        textwrap.dedent(
+            f"""
+            <div class="sequence-container">
+                <div class="sequence-label">Optimal Preprocessing Pipeline</div>
+                <div class="chip-chain">{chips_html}</div>
+                <div class="sequence-caption">{full_names_str}</div>
+            </div>
+            """
+        ),
+        unsafe_allow_html=True,
+    )
+
+    # 3. Clean Tabs without emojis
+    tab_tree, tab_comparison, tab_candidates, tab_background = st.tabs(
         [
-            "🌳 Beam Search Tree",
-            "📊 Comparison & Trajectory",
-            "📋 Candidate Log",
-            "💡 Compiler Theory",
+            "Search tree",
+            "Comparison",
+            "Candidates",
+            "Background",
         ]
     )
 
-    # Reconstitute BeamNode objects for tree visualization
-    raw_nodes = b_data.get("nodes", [])
+    # Reconstruct BeamNode objects for plotting
     beam_nodes = [
         BeamNode(
             depth=n["depth"],
@@ -455,65 +353,143 @@ if data and "beam_search" in data:
             compile_idx=n.get("compile_idx", 0),
             speedup_vs_baseline=n.get("speedup_vs_baseline", 1.0),
         )
-        for n in raw_nodes
+        for n in b_data.get("nodes", [])
     ]
 
     with tab_tree:
-        fig_tree = create_beam_tree_figure(beam_nodes, baseline_lat)
-        st.plotly_chart(fig_tree, use_container_width=True)
-        st.caption("Each node represents a pass sequence. Diamond green nodes were kept in the top-B beam for expansion; gray circles were pruned. Hover over nodes to inspect sequence details.")
+        st.markdown('<div class="chart-heading">Beam search exploration tree</div>', unsafe_allow_html=True)
+        fig_tree = build_beam_tree_chart(
+            nodes=beam_nodes,
+            baseline_latency=baseline_lat,
+            best_sequence=best_seq,
+        )
+        st.plotly_chart(fig_tree, use_container_width=True, config={"displayModeBar": False})
+        st.markdown(
+            '<div class="chart-caption">Evaluated pass sequences by search depth. Teal nodes were retained in the beam (B=2); grey nodes were pruned. The thicker teal line highlights the optimal pass sequence path.</div>',
+            unsafe_allow_html=True,
+        )
 
-    with tab_charts:
-        col_c1, col_c2 = st.columns(2)
-        with col_c1:
-            rand_lat = r_data.get("final_latency", baseline_lat)
-            fig_comp = create_comparison_figure(
-                baseline_lat=baseline_lat,
-                rand_lat=rand_lat,
-                beam_lat=best_lat,
-                model_name=b_data.get("model_name", "Model"),
-            )
-            st.plotly_chart(fig_comp, use_container_width=True)
-        with col_c2:
-            depth_best = {int(k): v for k, v in b_data.get("depth_best", {}).items()}
-            fig_curve = create_depth_curve_figure(depth_best, baseline_lat)
-            st.plotly_chart(fig_curve, use_container_width=True)
+    with tab_comparison:
+        st.markdown('<div class="chart-heading">Compiler pass pipeline latency</div>', unsafe_allow_html=True)
+        rand_lat = r_data.get("final_latency", baseline_lat)
+        fig_bar = build_comparison_bar_chart(
+            baseline_lat=baseline_lat,
+            rand_lat=rand_lat,
+            beam_lat=best_lat,
+        )
+        st.plotly_chart(fig_bar, use_container_width=True, config={"displayModeBar": False})
+        st.markdown(
+            '<div class="chart-caption">End-to-end execution latency on single-core CPU (local-sync device). Shorter bars indicate faster execution.</div>',
+            unsafe_allow_html=True,
+        )
 
-    with tab_table:
-        node_records = []
+        st.markdown('<div class="chart-heading">Latency vs search depth</div>', unsafe_allow_html=True)
+        depth_best = {int(k): v for k, v in b_data.get("depth_best", {}).items()}
+        fig_depth = build_latency_depth_chart(depth_best, baseline_lat)
+        st.plotly_chart(fig_depth, use_container_width=True, config={"displayModeBar": False})
+        st.markdown(
+            '<div class="chart-caption">Progressive latency reduction as the beam explores deeper pass sequences against the static -O3 baseline.</div>',
+            unsafe_allow_html=True,
+        )
+
+    with tab_candidates:
+        st.markdown('<div class="chart-heading">Evaluated candidates</div>', unsafe_allow_html=True)
+        st.markdown(
+            '<div class="chart-caption">All explored pass sequences, sorted by search depth and execution latency.</div>',
+            unsafe_allow_html=True,
+        )
+
+        records = []
         for n in beam_nodes:
-            node_records.append(
+            is_failed = math.isinf(n.latency)
+            records.append(
                 {
                     "Depth": n.depth,
-                    "Sequence": n.sequence_str,
-                    "Latency (ms)": round(n.latency, 2) if not math.isinf(n.latency) else "FAILED",
-                    "Speedup vs -O3": f"{n.speedup_vs_baseline:.2f}x" if n.speedup_vs_baseline > 0 else "-",
-                    "Kept in Beam": "✓ KEPT" if n.kept_in_beam else "pruned",
+                    "Sequence": " > ".join(n.sequence) if n.sequence else "(baseline)",
+                    "Latency": None if is_failed else round(n.latency, 2),
+                    "Status": "Failed" if is_failed else ("Kept in beam" if n.kept_in_beam else "Pruned"),
+                    "Speedup": None if is_failed else f"{n.speedup_vs_baseline:.2f}x",
                     "Compile #": n.compile_idx,
                 }
             )
-        df_nodes = pd.DataFrame(node_records)
-        st.dataframe(df_nodes, use_container_width=True, height=350)
 
-    with tab_theory:
+        df = pd.DataFrame(records)
+        df = df.sort_values(by=["Depth", "Latency"], ascending=[True, True])
+
+        st.dataframe(
+            df,
+            column_config={
+                "Latency": st.column_config.NumberColumn("Latency", format="%.2f ms"),
+                "Speedup": st.column_config.TextColumn("Speedup vs -O3"),
+                "Status": st.column_config.TextColumn("Status"),
+                "Depth": st.column_config.NumberColumn("Depth", format="%d"),
+            },
+            hide_index=True,
+            use_container_width=True,
+            height=380,
+        )
+
+    with tab_background:
         st.markdown(
-            """
-            ### Why Compiler Pass Ordering Matters
-            Modern ML compilers like **IREE** (Intermediate Representation Execution Environment) rely on a sequence of progressive lowering transformations (from high-level tensor operations down to target vector and machine instructions).
+            """<div class="background-column">
+<div class="background-section">
+<h3>Why pass order matters</h3>
+<p>
+Modern ML compilers such as IREE lower high-level tensor operations into executable machine
+code through successive Intermediate Representation (IR) transformations. Because each compiler
+pass alters the IR structure, applying a pass can expose optimization opportunities or permanently
+close downstream lowering paths.
+</p>
+<p>
+For instance, converting convolution layouts from NCHW to NHWC channels-last exposes contiguous
+memory dimensions that allow Img2Col lowering to fully utilize CPU SIMD vector execution. Applying
+Img2Col without prior layout conversion yields scalar fallbacks and memory fragmentation.
+</p>
+</div>
 
-            > **Progressive Lowering & Regime Shifts:**
-            > Applying a transformation changes the IR structure, opening opportunities for downstream passes while closing others. For instance:
-            > - **Channels-Last Conversion (`CC`) ➔ Img2Col (`I`)**: Converting image data layouts from NCHW to NHWC channels-last exposes contiguous memory blocks that enable Img2Col matrix-multiplication lowering to fully exploit hardware SIMD vector units.
-            > - In contrast, applying Img2Col without channels-last conversion or applying redundant generalizes can trigger memory fragmentation and unvectorized scalar fallbacks.
+<div class="pipeline-diagram">
+<div class="pipeline-box pipeline-box-highlight">
+<div class="pipeline-box-title">Preprocessing</div>
+<div class="pipeline-box-sub">Tuned by BeamPass</div>
+</div>
+<span class="pipeline-arrow">&rarr;</span>
+<div class="pipeline-box">
+<div class="pipeline-box-title">Dispatch Creation</div>
+<div class="pipeline-box-sub">Kernel partition & fusion</div>
+</div>
+<span class="pipeline-arrow">&rarr;</span>
+<div class="pipeline-box">
+<div class="pipeline-box-title">Code Generation</div>
+<div class="pipeline-box-sub">LLVM CPU vectorization</div>
+</div>
+</div>
 
-            #### Different Models Need Different Pipelines (Paper Fig. 2)
-            A static `-O3` pipeline uses a fixed heuristic order for all networks. However:
-            1. **Vision Models (ResNet, MobileNet):** Heavily bounded by convolution memory access layouts; benefit most from `CC -> I -> pad` sequences.
-            2. **Dense Networks & Transformers (MLP, BERT):** Lack spatial convolutions; benefit from matrix-multiplication operand transposition and intrinsics padding.
-            3. **Legality Masking:** Ensures only valid transformations are evaluated, preventing compilation crashes and avoiding wasted search budgets.
-            """
+<div class="background-section">
+<h3>What beam search does here</h3>
+<p>
+The search space of compiler pass sequences grows exponentially with pipeline length. Exhaustive
+search is intractable, while greedy search frequently gets trapped in sub-optimal local minima.
+</p>
+<p>
+BeamPass uses beam search with a width of <i>B = 2</i>. At each depth, it evaluates all legal
+successors, filters invalid transformations through legality masks (such as masking convolution
+passes on dense models), retains only the top <i>B</i> lowest-latency sequences, and prunes the remainder.
+</p>
+</div>
+
+<div class="background-section">
+<h3>How latency is measured</h3>
+<p>
+Latency measurements follow the paper's multi-tier protocol using <code>iree-benchmark-module</code>:
+</p>
+<p>
+<b>Selection phase:</b> 10 repetitions per candidate; the median is used to rank beam candidates.<br>
+<b>Final evaluation:</b> 10 independent invocations with 5 repetitions each; reports the mean &plusmn; standard deviation of the medians.
+</p>
+</div>
+</div>""",
+            unsafe_allow_html=True,
         )
 
 else:
-    st.info("👈 Configure optimization parameters in the sidebar and click **'Run Beam Optimization'**, or select a pre-recorded run from the dropdown to see instant results.")
-
+    st.info("Configure workload parameters in the sidebar and select 'Run search' to begin optimization.")
